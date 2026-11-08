@@ -1,5 +1,7 @@
 Sightline.register("system", {
   render(d, c) {
+    const box = c.box || { w: 400, h: 300 };
+    const ringSize = box.w < 330 ? 54 : box.w > 640 && box.h > 300 ? 88 : 70;
     const fanAvg = d.fans && d.fans.length ? Math.round(d.fans.reduce((a, f) => a + (f.rpm || 0), 0) / d.fans.length) : null;
     const tempPct = d.temp != null ? Math.min(100, (d.temp / 105) * 100) : null;
     const gauges = [
@@ -9,7 +11,7 @@ Sightline.register("system", {
         sub: d.cpu_c != null ? `avg ${d.cpu_c}°` : "" },
     ];
     const g = gauges.map((x) => `<div style="display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0">
-        ${c.ring(x.pct, { color: x.color, label: x.text, size: 70 })}
+        ${c.ring(x.pct, { color: x.color, label: x.text, size: ringSize })}
         <div style="font-size:11px;color:var(--dim)">${c.h(x.label)}</div><div style="font-size:10px;color:var(--faint)">${c.h(x.sub || "")}</div></div>`).join("");
     const chips = [];
     if (fanAvg != null) chips.push(`<span class="chip" title="${c.h(d.fans.map((f, i) => `Fan ${i + 1}: ${f.rpm} rpm of ${f.max}`).join("\n"))}">Fans ${fanAvg} rpm</span>`);
@@ -17,8 +19,13 @@ Sightline.register("system", {
     if (d.throttled) chips.push(`<span class="chip bad">Slowed for heat</span>`);
     if (d.uptime_s) chips.push(`<span class="chip">Up ${c.h(c.dur(d.uptime_s))}</span>`);
     const spark = (key, color, label, max) => `<div style="min-width:0"><div style="display:flex;justify-content:space-between;font-size:11px;color:var(--faint)"><span>${label}</span><span>10 min</span></div>${c.spark(c.recent("system." + key), { color, max })}</div>`;
-    return `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">${g}</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0">${chips.join("")}</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">${spark("cpu", "var(--cpu)", "Processor", 100)}${spark("gpu", "var(--gpu)", "Graphics", 100)}${spark("temp", "var(--mem)", "Heat", 110)}</div>`;
+    // Small card: just the gauges. Taller: chips and 10-minute graphs. Wide and short: graphs beside the gauges.
+    const showChips = box.h >= 190, showSparks = box.h >= 250 || (box.w >= 760 && box.h >= 170);
+    const sparks = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">${spark("cpu", "var(--cpu)", "Processor", 100)}${spark("gpu", "var(--gpu)", "Graphics", 100)}${spark("temp", "var(--mem)", "Heat", 110)}</div>`;
+    const gaugeRow = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">${g}</div>`;
+    const chipRow = showChips ? `<div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0">${chips.join("")}</div>` : "";
+    if (box.w >= 760 && box.h < 250 && showSparks)
+      return `<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;align-items:center"><div>${gaugeRow}</div><div>${chipRow}${sparks}</div></div>`;
+    return gaugeRow + chipRow + (showSparks ? sparks : "");
   },
 });

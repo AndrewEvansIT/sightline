@@ -16,7 +16,9 @@ DEFAULTS = {
     "column_width": 440,
     "theme": "dark",            # dark | light | auto
     "density": "comfortable",   # comfortable | compact
-    "order": [],                # widget ids in display order; unknown ids are skipped, new ones appended
+    "order": [],                # packing order chosen in Settings (empty = Sightline decides)
+    "grid": {},                 # saved card positions per layout profile: "window:12" -> {id: {x, y, w, h}}
+    "locked": False,            # stop dragging and resizing
     "widgets": {},              # id -> {"enabled": bool, ...widget settings}
     "alerts": {"enabled": True, "rules": {}},   # rule key prefix -> bool
     "lan": {"enabled": False, "token": ""},     # read-only view for other devices on your network

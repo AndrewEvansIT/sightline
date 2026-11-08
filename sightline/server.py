@@ -148,7 +148,7 @@ def make_handler(app):
 
 # Profiles: layout and widget settings in one file someone else can import. -----------------
 
-PROFILE_KEYS = ("layout", "screen", "strip_height", "column_width", "theme", "density", "order", "widgets", "alerts", "custom")
+PROFILE_KEYS = ("layout", "screen", "strip_height", "column_width", "theme", "density", "order", "grid", "locked", "widgets", "alerts", "custom")
 
 
 def profile_export(app):

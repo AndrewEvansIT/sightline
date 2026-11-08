@@ -11,6 +11,7 @@
 
   Sightline.register("memory", {
     render(d, c) {
+      const box = c.box || { w: 500, h: 400 };
       let ci = 0;
       const parts = (d.parts || []).map((p) => {
         const color = p.macos ? "var(--fill)" : p.untracked ? "var(--warn)" : p.reclaimable ? "#3d4651" : p.other ? "var(--s6)" : COLORS[ci++ % COLORS.length];
@@ -18,7 +19,7 @@
       });
       const freeGb = d.free_gb || 0;
       const pieSvg = c.pie(parts.map((p) => ({ value: p.gb, color: p.color, thin: p.reclaimable })).concat([{ value: freeGb, color: "#252a30", thin: true }]),
-        { total: d.total_gb, label: `${Math.round(d.used_gb)} GB`, sub: `of ${d.total_gb} GB`, size: 108 });
+        { total: d.total_gb, label: `${Math.round(d.used_gb)} GB`, sub: `of ${d.total_gb} GB`, size: box.w < 330 ? 84 : 108 });
       const legend = parts.map((p) => `<div class="row" style="padding:1px 0;font-size:12px"><span class="dot" style="background:${p.color}"></span><span class="lbl">${c.h(p.name)}</span><span class="val">${c.num(p.gb, 1)} GB</span></div>`).join("") +
         `<div class="row" style="padding:1px 0;font-size:12px"><span class="dot" style="background:#252a30;box-shadow:inset 0 0 0 1px var(--line-2)"></span><span class="lbl">Free</span><span class="val">${c.num(freeGb, 1)} GB</span></div>`;
       const chips = [`<span class="chip">${c.num(d.available_gb, 0)} GB available</span>`];
@@ -32,9 +33,14 @@
         return `<div class="row clickable" data-memgroup="${c.h(g.name)}"><span class="lbl">${c.h(g.name)}${g.count > 1 ? ` <span class="t-faint">· ${g.count}</span>` : ""}</span>
             <span class="val">${c.num(g.gb, g.gb >= 10 ? 0 : 1)} GB</span>${can ? `<button class="btn quiet" data-action="stop" data-params="${c.attr({ name: g.name })}" data-confirm>${verb}</button>` : ""}</div>${detail}`;
       }).join("");
-      return `<div style="display:flex;gap:12px;align-items:center">${pieSvg}<div style="flex:1;min-width:0">${legend}</div></div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 6px">${chips.join("")}</div>
-        <div class="sep">Using memory</div><div>${list}</div>`;
+      // Narrow: pie on top. Wide: the list sits beside the pie. Short: no list.
+      const top = box.w < 300
+        ? `<div style="display:flex;flex-direction:column;align-items:center;gap:8px">${pieSvg}<div style="width:100%">${legend}</div></div>`
+        : `<div style="display:flex;gap:12px;align-items:center">${pieSvg}<div style="flex:1;min-width:0">${legend}</div></div>`;
+      const chipRow = `<div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 6px">${chips.join("")}</div>`;
+      const listBlock = `<div class="sep">Using memory</div><div>${list}</div>`;
+      if (box.w >= 680) return `<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px"><div>${top}${chipRow}</div><div class="keep-scroll" style="overflow-y:auto;max-height:${Math.max(120, box.h - 40)}px">${listBlock}</div></div>`;
+      return top + chipRow + (box.h >= 260 ? listBlock : "");
     },
   });
 })();

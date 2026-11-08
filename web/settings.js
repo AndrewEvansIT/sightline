@@ -73,6 +73,10 @@
       <div class="field"><div class="f-l">Open at login<small>Starts Sightline when you log in.</small></div>${sw("lay-login", a.loginItem)}</div>
       <div class="field"><div class="f-l">Menu bar<small>A small readout in the menu bar: processor, memory and models.</small></div>${sw("lay-menubar", a.menuBar !== false)}</div>`
         : `<p class="note">Screen, size and login options appear when Sightline runs as the Mac app. In a browser, the layout follows the window.</p>`}
+      <h3>Cards</h3>
+      <p class="note" style="margin:0 0 6px">Drag a card by its title to move it; the others make room. Drag its bottom-right corner to resize, or double-click the corner to fit what's in it. Each layout (strip, column, window, and each size of them) remembers its own arrangement.</p>
+      <div class="field"><div class="f-l">Lock card positions<small>Stops dragging and resizing, so nothing moves by accident.</small></div>${sw("lay-lock", !!conf.locked)}</div>
+      <div class="field"><div class="f-l">Reset this layout<small>Back to Sightline's own arrangement, sized to what's in each card.</small></div><button class="btn quiet" id="lay-reset">Reset</button></div>
       <h3>Look</h3>
       <div class="field"><div class="f-l">Theme</div><select id="lay-theme">${[["dark", "Dark"], ["light", "Light"], ["auto", "Match macOS"]].map(([k, l]) => `<option value="${k}" ${conf.theme === k ? "selected" : ""}>${l}</option>`).join("")}</select></div>
       <div class="field"><div class="f-l">Density</div><select id="lay-density">${[["comfortable", "Comfortable"], ["compact", "Compact"]].map(([k, l]) => `<option value="${k}" ${conf.density === k ? "selected" : ""}>${l}</option>`).join("")}</select></div>`;
@@ -88,6 +92,8 @@
     on("#lay-width", "change", (e) => save({ column_width: Number(e.target.value) }));
     on("#lay-theme", "change", (e) => save({ theme: e.target.value }));
     on("#lay-density", "change", (e) => save({ density: e.target.value }));
+    on("#lay-lock", "change", (e) => save({ locked: e.target.checked }));
+    on("#lay-reset", "click", async () => { await S().resetLayout(); conf = await S().loadConfig(); S().toast("Layout reset."); });
     on("#lay-login", "change", (e) => bridge() && bridge().postMessage({ loginItem: e.target.checked }));
     on("#lay-menubar", "change", (e) => bridge() && bridge().postMessage({ menuBar: e.target.checked }));
   }
@@ -107,7 +113,7 @@
   }
 
   function widgetsPane(pane) {
-    pane.innerHTML = `<p class="note" style="margin:0 0 10px">Drag to reorder. Cards hide on their own when this Mac has nothing to show for them.</p>
+    pane.innerHTML = `<p class="note" style="margin:0 0 10px">Drag to set the order cards are packed in (this re-packs the current layout). You can also drag cards around on the panel itself. Cards hide on their own when this Mac has nothing to show for them.</p>
       <div class="wlist" id="wlist">${widgets.map((w) => `
         <div class="w" draggable="true" data-id="${w.id}">
           <div class="w-head"><span class="grip" title="Drag to move">⋮⋮</span>
@@ -146,6 +152,7 @@
       dragging = null;
       const order = [...list.children].map((x) => x.dataset.id);
       await save({ order });
+      await S().resetLayout();   // re-pack this layout in the new order
       widgets = await S().loadMeta();
     });
     list.addEventListener("dragover", (e) => {

@@ -154,16 +154,109 @@
                 readonly: () => !!(lastStatus && lastStatus.readonly), bridge: () => bridge, config: () => config };
 
   // Drawing --------------------------------------------------------------------------------
+  // Cards sit on a snap grid (web/grid.js). Drag a card by its header to move it, drag its corner to resize,
+  // double-click the corner to fit the content. Each kind of layout keeps its own saved arrangement.
+  const G = window.SightlineGrid;
+  let grid = { u: null, layout: [], key: "", auto: true, sig: "" };
+  const natural = {};          // id -> {px, w}: the content's natural height, measured once per card width
+  let moving = null;           // the card being dragged or resized
+  let saveTimer = null;
+
   function ensureCard(id) {
     if (cards[id]) return cards[id];
     const m = meta[id] || { title: id, size: "m" };
     const el = document.createElement("section");
     el.className = `card size-${m.size || "m"}`;
     el.dataset.widget = id;
-    el.innerHTML = `<div class="card-head"><span class="card-title">${h(m.title)}</span><span class="card-sum"></span></div><div class="card-body"></div>`;
-    cards[id] = { el, body: el.querySelector(".card-body"), sum: el.querySelector(".card-sum"), html: "" };
+    el.innerHTML = `<div class="card-head" title="Drag to move"><span class="card-title">${h(m.title)}</span><span class="card-sum"></span></div>` +
+      `<div class="card-body"></div><div class="resize-handle" title="Drag to resize. Double-click to fit the content."></div>`;
+    cards[id] = { el, body: el.querySelector(".card-body"), sum: el.querySelector(".card-sum"), head: el.querySelector(".card-head"), html: "" };
     return cards[id];
   }
+
+  function boardBox() {
+    const b = document.getElementById("board"), cs = getComputedStyle(b);
+    const pl = parseFloat(cs.paddingLeft), pt = parseFloat(cs.paddingTop);
+    return { el: b, pl, pt, w: b.clientWidth - pl - parseFloat(cs.paddingRight), h: b.clientHeight - pt - parseFloat(cs.paddingBottom) };
+  }
+
+  function arrange(want, status) {
+    const box = boardBox();
+    const u = G.units(box.w, box.h, document.body.dataset.layout, config.density);
+    const key = G.profileKey(u);
+    const saved = (config.grid || {})[key];
+    // Only rearrange when something that matters changes, so cards don't shuffle while you look at them.
+    const nat = {};
+    want.forEach((id) => { if (natural[id]) nat[id] = natural[id].px; });
+    const sig = [key, want.join(","), JSON.stringify(saved || null), Object.keys(nat).sort().map((id) => `${id}:${nat[id]}`).join(".")].join("|");
+    if (sig === grid.sig && grid.u) return;
+    const r = G.arrange(want, { u, metas: meta, saved: config.grid || {}, natural: nat, entries: status.widgets, alerts: status.alerts, preferredOrder: config.order });
+    grid = Object.assign(r, { u, sig });
+  }
+
+  function position(layout, skip) {
+    const box = boardBox();
+    let maxR = 0, maxB = 0;
+    layout.forEach((b) => {
+      const p = G.toPx(b, grid.u);
+      maxR = Math.max(maxR, p.left + p.width);
+      maxB = Math.max(maxB, p.top + p.height);
+      const c = cards[b.id];
+      if (!c || b.id === skip) return;
+      const st = c.el.style;
+      st.left = `${box.pl + p.left}px`; st.top = `${box.pt + p.top}px`; st.width = `${p.width}px`; st.height = `${p.height}px`;
+      // A new card appears in place; after that, moves animate.
+      if (!c.el.classList.contains("placed")) requestAnimationFrame(() => requestAnimationFrame(() => c.el.classList.add("placed")));
+    });
+    let sp = box.el.querySelector(".grid-spacer");
+    if (!sp) { sp = document.createElement("div"); sp.className = "grid-spacer"; box.el.appendChild(sp); }
+    sp.style.left = `${box.pl + maxR}px`;
+    sp.style.top = `${box.pt + maxB}px`;
+  }
+
+  function placeholder(b) {
+    const box = boardBox();
+    let ph = box.el.querySelector(".grid-placeholder");
+    if (!b) { if (ph) ph.remove(); return; }
+    if (!ph) { ph = document.createElement("div"); ph.className = "grid-placeholder"; box.el.appendChild(ph); }
+    const p = G.toPx(b, grid.u);
+    Object.assign(ph.style, { left: `${box.pl + p.left}px`, top: `${box.pt + p.top}px`, width: `${p.width}px`, height: `${p.height}px` });
+  }
+
+  function saveLayout(layout) {
+    const map = {};
+    layout.forEach((b) => (map[b.id] = { x: b.x, y: b.y, w: b.w, h: b.h }));
+    config.grid = Object.assign({}, config.grid || {}, { [grid.key]: map });
+    clearTimeout(saveTimer);
+    const key = grid.key;
+    saveTimer = setTimeout(() => api("/api/config", { changes: { grid: { [key]: map } } }).catch(() => toast("Couldn't save the layout.", "bad")), 300);
+  }
+
+  // How tall a card would be to show all of its content, in px.
+  function measure(id) {
+    const c = cards[id];
+    const inner = c && c.body.firstElementChild;
+    if (!inner) return 0;
+    const cs = getComputedStyle(c.el);
+    return Math.ceil(c.head.offsetHeight + parseFloat(getComputedStyle(c.head).marginBottom) + inner.offsetHeight +
+                     parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + 2);
+  }
+
+  const gridHost = {
+    grid: () => grid,
+    meta: (id) => meta[id],
+    locked: () => !!config.locked || ctx.readonly(),
+    preview(layout, id) { moving = id; position(layout, id); placeholder(id ? layout.find((b) => b.id === id) : null); },
+    commit(layout) {
+      moving = null;
+      placeholder(null);
+      grid = Object.assign({}, grid, { layout, auto: false });
+      saveLayout(layout);
+      grid.sig = "";   // recompute from the saved layout on the next draw
+      if (lastStatus) draw(lastStatus);
+    },
+    fit(id) { const px = measure(id); return px ? Math.max(2, Math.round((px + grid.u.gap) / (grid.u.rowH + grid.u.gap))) : 0; },
+  };
 
   function draw(status) {
     lastStatus = status;
@@ -172,22 +265,29 @@
       const w = status.widgets[id];
       return w && w.enabled && w.available !== false && (w.data || w.error);
     });
-    // Order and presence.
-    want.forEach((id, i) => {
-      const c = ensureCard(id);
-      if (board.children[i] !== c.el) board.insertBefore(c.el, board.children[i] || null);
-    });
+    want.forEach((id) => { const c = ensureCard(id); if (c.el.parentNode !== board) board.appendChild(c.el); });
     Object.keys(cards).forEach((id) => { if (!want.includes(id) && cards[id].el.parentNode) cards[id].el.remove(); });
-    // Content.
+    if (!moving) {
+      arrange(want, status);
+      position(grid.layout);
+    }
+    const byId = {};
+    grid.layout.forEach((b) => (byId[b.id] = b));
+    // Content: each renderer learns its card's size (ctx.box), so it can lay itself out to fit.
+    let remeasure = false;
     want.forEach((id) => {
       const w = status.widgets[id], c = cards[id], d = w.data || {};
       c.el.classList.toggle("error", !!w.error && !w.data);
       const sum = d.summary || "";
       if (c.sum.textContent !== sum) c.sum.textContent = sum;
+      const b = byId[id];
+      const px = b && grid.u ? G.toPx(b, grid.u) : { width: 300, height: 300 };
+      const boxInfo = { w: px.width, h: px.height, cols: b ? b.w : 4, rows: b ? b.h : 6,
+                        narrow: px.width < 300, wide: px.width >= 560, short: px.height < 200, tall: px.height >= 420 };
       let html;
       try {
         if (w.error && !w.data) html = `<div>${h(w.error)}</div>`;
-        else html = renderers[id] ? renderers[id].render(d, Object.assign({ widget: id }, ctx)) : generic(d);
+        else html = renderers[id] ? renderers[id].render(d, Object.assign({ widget: id, box: boxInfo }, ctx)) : generic(d);
       } catch (e) {
         console.error(id, e);
         html = `<div class="t-bad">This card couldn't draw: ${h(e.message)}</div>`;
@@ -195,14 +295,22 @@
       if (html != null && html !== c.html) {
         // Keep scroll positions of the card and anything inside it marked .keep-scroll.
         const keep = [c.body.scrollTop, ...[...c.body.querySelectorAll(".keep-scroll")].map((x) => x.scrollTop)];
-        c.body.innerHTML = html;
+        c.body.innerHTML = `<div class="body-in">${html}</div>`;
         c.html = html;
         c.body.scrollTop = keep[0];
         [...c.body.querySelectorAll(".keep-scroll")].forEach((x, i) => (x.scrollTop = keep[i + 1] || 0));
       }
+      // Smart default: size each card to its content once, when it first shows (or its width changes),
+      // then hold still: cards don't reshuffle because a list got longer.
+      if (grid.auto && w.data && !moving && b && (!natural[id] || natural[id].w !== b.w)) {
+        const n = measure(id);
+        if (n) { natural[id] = { px: n, w: b.w }; remeasure = true; }
+      }
     });
+    if (remeasure) requestAnimationFrame(() => lastStatus && draw(lastStatus));
     drawNotices(status.alerts || []);
     document.body.classList.toggle("readonly", !!status.readonly);
+    document.body.classList.toggle("locked", !!config.locked);
   }
 
   function drawNotices(alerts) {
@@ -261,7 +369,9 @@
     document.body.dataset.layout = config.layout || "window";
     document.body.dataset.theme = config.theme || "dark";
     document.body.dataset.density = config.density || "comfortable";
-    if (window.innerWidth < 700 && config.layout !== "column") document.body.dataset.layout = "window";
+    // Phones and narrow windows: one column, whatever the setting.
+    if (window.innerWidth < 600) document.body.dataset.layout = "column";
+    else if (window.innerWidth < 700 && config.layout === "strip") document.body.dataset.layout = "window";
   }
 
   async function loadRenderers() {
@@ -279,6 +389,14 @@
   window.Sightline = {
     register(id, r) { renderers[id] = r; },
     ctx, refresh, loadMeta, loadConfig, applyLook, toast,
+    resetLayout() {   // forget this layout's arrangement and go back to the smart default
+      const key = grid.key;
+      if (config.grid) config.grid[key] = null;
+      Object.keys(natural).forEach((k) => delete natural[k]);
+      grid.sig = "";
+      return api("/api/config", { changes: { grid: { [key]: null } } }).then(() => lastStatus && draw(lastStatus));
+    },
+    layoutKey: () => grid.key,
     meta: () => meta, status: () => lastStatus,
     async saveConfig(changes) {
       const res = await api("/api/config", { changes });
@@ -294,12 +412,13 @@
     await loadConfig().catch(() => {});
     await loadRenderers().catch(() => {});
     await loadMeta().catch(() => {});
+    G.attach(document.getElementById("board"), gridHost);
     await refresh();
     setInterval(refresh, 3000);
     setInterval(() => loadMeta().catch(() => {}), 60000);
     if (config && !config.setup_done && !TOKEN && window.SightlineSettings) window.SightlineSettings.setup();
   }
-  window.addEventListener("resize", applyLook);
+  window.addEventListener("resize", () => { applyLook(); if (lastStatus && !moving) draw(lastStatus); });
   document.addEventListener("DOMContentLoaded", () => {
     // Tell the Mac app when Settings or a card is open, so a strip or column can float above other windows.
     const ov = document.getElementById("overlay");

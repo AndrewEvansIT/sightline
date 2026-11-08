@@ -32,7 +32,9 @@ General Mac monitors don't know your local models exist. Model servers don't sho
 - Repos with uncommitted or unpushed work, dev servers with Stop and Open, Docker and OrbStack containers.
 
 **Make it yours**
-- Three layouts, light and dark, drag to reorder, switch any card off.
+- **Cards that snap into place.** Drag a card by its title and the others make room; drag its corner to resize, or double-click the corner to fit what's in it. Cards rearrange their own content to suit their size.
+- **A smart starting layout** for wherever the panel sits: full-height cards in a strip along the bottom of a screen, one column down the side, a packed grid in a window. Cards are ordered by what matters on this Mac and sized to their content, and a card with a problem moves up. Each layout, at each size, remembers its own arrangement, and a saved one stretches to fit when the window changes size.
+- Light and dark, switch any card off, lock the layout so nothing moves by accident.
 - Notifications when something needs a look, each one switchable.
 - History for every graph (a day, a week, a month), kept on your Mac.
 - **Script tiles:** any command that prints text or JSON becomes a card.
@@ -61,7 +63,7 @@ Everything stays on your Mac. Sightline only reads, and changes something only w
 ## How it's built
 
 - **`sightline/`** — a small Python server, standard library only, so it runs on the Python that ships with macOS. Each card is a widget class in `sightline/widgets/` that collects on its own schedule. Parsers are pure functions with tests against saved command output.
-- **`web/`** — the page: plain HTML, CSS and JavaScript, no build step. A generic renderer draws any widget from a simple JSON shape; richer cards ship their own small renderer.
+- **`web/`** — the page: plain HTML, CSS and JavaScript, no build step. A generic renderer draws any widget from a simple JSON shape; richer cards ship their own small renderer. `grid.js` is the layout engine: a snap grid with collision push, gravity, per-layout profiles and smart default packing, as pure functions with their own tests.
 - **`app/`** — the Mac app in Swift: window layouts, the menu bar readout, notifications, open at login.
 - **`helpers/`** — tiny Swift tools for what Python can't reach without admin rights: fans and temperatures (SMC) and power (IOReport).
 
@@ -95,7 +97,8 @@ echo '{"summary":"ok","rows":[{"label":"Backups","value":"done","state":"ok"}]}'
 ## Tests
 
 ```bash
-python3 -m unittest discover tests
+python3 -m unittest discover tests     # widgets, server, parsers
+node --test tests/grid.test.js         # the layout engine
 ```
 
 ## License

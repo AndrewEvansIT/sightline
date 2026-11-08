@@ -12,7 +12,11 @@
   let conf = {};
 
   function close() { overlay().hidden = true; overlay().innerHTML = ""; }
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay().hidden) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || overlay().hidden) return;
+    const setupClose = document.getElementById("su-close");
+    if (setupClose) setupClose.click(); else close();
+  });
 
   function sw(id, on, extra = "") {
     return `<label class="switch"><input type="checkbox" id="${id}" ${on ? "checked" : ""} ${extra}><span></span></label>`;
@@ -292,8 +296,14 @@
   // First run ----------------------------------------------------------------------------------
   async function setup(again) {
     overlay().hidden = false;
-    overlay().innerHTML = `<div class="sheet" role="dialog" aria-label="Welcome"><div class="sheet-head"><h2>Welcome to Sightline</h2></div>
-      <div class="pane" id="su-pane"><p class="t-dim">Looking at this Mac…</p></div></div>`;
+    overlay().innerHTML = `<div class="sheet" role="dialog" aria-label="Welcome"><div class="sheet-head"><h2>Welcome to Sightline</h2><button class="btn quiet x" id="su-close">Close</button></div>
+      <div class="pane" id="su-pane"><p class="t-dim">Looking at this Mac…</p></div>
+      <div class="sheet-foot"><span class="note grow" style="margin:0">You can change all of this later in Settings.</span><button class="btn primary" id="su-go">Start</button></div></div>`;
+    // Every way out finishes setup, so it never comes back on its own.
+    const finish = async (layoutPick) => { await save(Object.assign({ setup_done: true }, layoutPick ? { layout: layoutPick } : {})); close(); };
+    document.getElementById("su-close").onclick = () => finish();
+    document.getElementById("su-go").onclick = () => finish();
+    overlay().onclick = (e) => { if (e.target === overlay()) finish(); };
     await new Promise((r) => setTimeout(r, again ? 200 : 4000)); // let the widgets take a first look
     [conf, widgets] = await Promise.all([S().loadConfig(), S().loadMeta()]);
     let pick = conf.layout || "strip";
@@ -304,8 +314,7 @@
       <div class="setup-grid">${found.map((w) => `<div class="setup-item">${sw(`su-${w.id}`, w.enabled, `data-enable="${w.id}"`)}<div>${c().h(w.title)}<small>${c().h(w.description)}</small></div></div>`).join("")}</div>
       ${missing.length ? `<p class="note">Not on this Mac right now (they appear on their own if that changes): ${missing.map((w) => c().h(w.title)).join(", ")}.</p>` : ""}
       ${app() ? `<h3>Where should it sit?</h3><div class="choice" id="su-lay">${[["strip", "Bottom strip", "Along the bottom of a screen"], ["column", "Side column", "At the right edge"], ["window", "Window", "A normal window"]]
-        .map(([k, l, s]) => `<button data-layout="${k}" class="${pick === k ? "on" : ""}">${l}<small>${s}</small></button>`).join("")}</div>` : ""}
-      <div class="btns" style="margin-top:16px"><button class="btn primary" id="su-go">Start</button></div>`;
+        .map(([k, l, s]) => `<button data-layout="${k}" class="${pick === k ? "on" : ""}">${l}<small>${s}</small></button>`).join("")}</div>` : ""}`;
     pane.addEventListener("change", (e) => { if (e.target.dataset.enable) save({ widgets: { [e.target.dataset.enable]: { enabled: e.target.checked } } }); });
     const lay = pane.querySelector("#su-lay");
     if (lay) lay.onclick = (e) => {
@@ -314,7 +323,7 @@
       pick = b.dataset.layout;
       [...lay.children].forEach((x) => x.classList.toggle("on", x === b));
     };
-    pane.querySelector("#su-go").onclick = async () => { await save({ setup_done: true, layout: app() ? pick : conf.layout }); close(); };
+    document.getElementById("su-go").onclick = () => finish(app() ? pick : null);
   }
 
   window.SightlineSettings = { open, setup, close };

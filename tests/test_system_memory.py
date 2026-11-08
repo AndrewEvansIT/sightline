@@ -87,5 +87,37 @@ class MemoryTest(unittest.TestCase):
         self.assertEqual(memory.dev_roots_of(args, procs, "501"), {"10": "vite"})
 
 
+class GroupingTest(unittest.TestCase):
+    """Apps group under their name with Quit; coding agents get no Quit or Stop (it would end every session)."""
+
+    def test_groups(self):
+        import os
+        from unittest import mock
+        me = str(os.getuid())
+        procs = {
+            "100": ("1", me, "/Applications/Slack.app/Contents/MacOS/Slack"),
+            "101": ("100", me, "/Applications/Slack.app/Contents/Frameworks/Slack Helper.app/Contents/MacOS/Slack Helper"),
+            "200": ("1", me, "/Users/me/.local/share/claude/versions/9/claude.app/Contents/MacOS/claude"),
+            "201": ("1", me, "/opt/homebrew/bin/codex"),
+            "300": ("1", "0", "/usr/libexec/logd"),
+        }
+        fp = {pid: 100 * 2**20 for pid in procs}
+        w = memory.Memory.__new__(memory.Memory)
+        w.app = mock.Mock()
+        w.app.data.return_value = {}
+        w.data_of = lambda wid: {}
+        with mock.patch.object(memory.core, "footprints", return_value=fp), \
+                mock.patch.object(memory.core, "processes", return_value=procs), \
+                mock.patch.object(memory.core, "process_args", return_value={}), \
+                mock.patch.object(memory, "launchd_jobs", return_value={}):
+            groups = memory.Memory.build_groups(w)
+        kinds = {k: v["kind"] for k, v in groups.items()}
+        self.assertEqual(kinds["Slack"], "app")
+        self.assertEqual(groups["Slack"]["bytes"], 200 * 2**20)
+        self.assertEqual(kinds["Claude Code"], "cli")
+        self.assertEqual(kinds["Codex"], "cli")
+        self.assertEqual(kinds["macOS services"], "macos")
+
+
 if __name__ == "__main__":
     unittest.main()

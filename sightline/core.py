@@ -143,7 +143,7 @@ def footprints():
 def processes():
     """pid -> (ppid, uid, command path) for every process. comm is last, so it isn't cut short."""
     procs = {}
-    for line in run(["ps", "-axo", "pid=,ppid=,uid=,comm="]).splitlines():
+    for line in run(["ps", "-axwwo", "pid=,ppid=,uid=,comm="]).splitlines():
         parts = line.split(None, 3)
         if len(parts) == 4:
             procs[parts[0]] = (parts[1], parts[2], parts[3])

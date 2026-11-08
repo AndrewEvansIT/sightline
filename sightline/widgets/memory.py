@@ -269,6 +269,9 @@ class Memory(Widget):
                 name = CLI_NAMES.get(base, base)
                 # Coding agents: no Stop here (it would end every session at once); quit them in their terminal.
                 kind = kind if kind == "agent" else ("cli" if base in CLI_NAMES and base != "ollama" else "process")
+            # Coding agents can ship as an app bundle too (claude.app): no Quit, it would end every session at once.
+            if kind == "app" and name in CLI_NAMES and name != "ollama":
+                name, kind, bundle = CLI_NAMES[name], "cli", None
             g = groups.setdefault(name, {"name": name, "kind": kind, "bytes": 0, "procs": [], "pids": [], "bases": {}})
             g["bytes"] += size
             g["pids"].append(pid)

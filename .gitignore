@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+helpers/build/
+app/build/
+.DS_Store
+/dist/

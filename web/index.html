@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sightline</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body data-layout="window" data-theme="dark">
+  <header class="top">
+    <div class="brand"><span class="logo" aria-hidden="true"></span>Sightline</div>
+    <div class="notices" id="notices" aria-live="polite"></div>
+    <div class="top-gap"></div>
+    <button class="icon-btn" id="btn-card" title="Make a rig card" aria-label="Make a rig card">
+      <svg viewBox="0 0 24 24"><path d="M4 7h3l2-2h6l2 2h3v12H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+    </button>
+    <button class="icon-btn" id="btn-settings" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M19.4 13.5l1.6 1.2-2 3.4-1.9-.7a7.6 7.6 0 0 1-2 1.2l-.3 2h-4l-.3-2a7.6 7.6 0 0 1-2-1.2l-1.9.7-2-3.4 1.6-1.2a7.7 7.7 0 0 1 0-2.4L4.6 9.9l2-3.4 1.9.7a7.6 7.6 0 0 1 2-1.2l.3-2h4l.3 2a7.6 7.6 0 0 1 2 1.2l1.9-.7 2 3.4-1.6 1.2a7.7 7.7 0 0 1 0 2.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    </button>
+  </header>
+  <main class="board" id="board"></main>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="overlay" id="overlay" hidden></div>
+  <script src="/static/app.js"></script>
+  <script src="/static/settings.js"></script>
+  <script src="/static/cards.js"></script>
+</body>
+</html>

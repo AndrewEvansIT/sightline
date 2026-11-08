@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Device Characteristics</key>
+		<dict>
+			<key>Product Name</key>
+			<string>Built In SDXC Reader</string>
+			<key>Vendor Name</key>
+			<string>Apple</string>
+		</dict>
+		<key>IOObjectClass</key>
+		<string>AppleSDXCBlockStorageDevice</string>
+		<key>IORegistryEntryChildren</key>
+		<array>
+			<dict>
+				<key>IOObjectClass</key>
+				<string>IOBlockStorageDriver</string>
+				<key>IORegistryEntryName</key>
+				<string>IOBlockStorageDriver</string>
+				<key>Statistics</key>
+				<dict>
+					<key>Bytes (Read)</key>
+					<integer>0</integer>
+					<key>Bytes (Write)</key>
+					<integer>0</integer>
+					<key>Errors (Read)</key>
+					<integer>0</integer>
+					<key>Errors (Write)</key>
+					<integer>0</integer>
+					<key>Latency Time (Read)</key>
+					<integer>0</integer>
+					<key>Latency Time (Write)</key>
+					<integer>0</integer>
+					<key>Operations (Read)</key>
+					<integer>0</integer>
+					<key>Operations (Write)</key>
+					<integer>0</integer>
+					<key>Retries (Read)</key>
+					<integer>0</integer>
+					<key>Retries (Write)</key>
+					<integer>0</integer>
+					<key>Total Time (Read)</key>
+					<integer>0</integer>
+					<key>Total Time (Write)</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>IORegistryEntryName</key>
+		<string>AppleSDXCBlockStorageDevice</string>
+		<key>Protocol Characteristics</key>
+		<dict>
+			<key>Physical Interconnect</key>
+			<string>Secure Digital</string>
+			<key>Physical Interconnect Location</key>
+			<string>Internal</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>Device Characteristics</key>
+		<dict>
+			<key>Medium Type</key>
+			<string>Solid State</string>
+			<key>Product Name</key>
+			<string>PCIe SSD</string>
+			<key>Product Revision Level</key>
+			<string>EIFM51.1</string>
+			<key>Vendor Name</key>
+			<string></string>
+		</dict>
+		<key>IOObjectClass</key>
+		<string>IONVMeBlockStorageDevice</string>
+		<key>IORegistryEntryChildren</key>
+		<array>
+			<dict>
+				<key>IOObjectClass</key>
+				<string>IOBlockStorageDriver</string>
+				<key>IORegistryEntryChildren</key>
+				<array>
+					<dict>
+						<key>BSD Name</key>
+						<string>disk8</string>
+						<key>IOObjectClass</key>
+						<string>IOMedia</string>
+						<key>IORegistryEntryName</key>
+						<string>PCIe SSD Media</string>
+						<key>Size</key>
+						<integer>8001563222016</integer>
+						<key>Whole</key>
+						<true/>
+					</dict>
+				</array>
+				<key>IORegistryEntryName</key>
+				<string>IOBlockStorageDriver</string>
+				<key>Statistics</key>
+				<dict>
+					<key>Bytes (Read)</key>
+					<integer>4950408226816</integer>
+					<key>Bytes (Write)</key>
+					<integer>14491648</integer>
+					<key>Errors (Read)</key>
+					<integer>0</integer>
+					<key>Errors (Write)</key>
+					<integer>0</integer>
+					<key>Latency Time (Read)</key>
+					<integer>0</integer>
+					<key>Latency Time (Write)</key>
+					<integer>0</integer>
+					<key>Operations (Read)</key>
+					<integer>17619263</integer>
+					<key>Operations (Write)</key>
+					<integer>1694</integer>
+					<key>Retries (Read)</key>
+					<integer>0</integer>
+					<key>Retries (Write)</key>
+					<integer>0</integer>
+					<key>Total Time (Read)</key>
+					<integer>147607034786696</integer>
+					<key>Total Time (Write)</key>
+					<integer>452461948</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>IORegistryEntryName</key>
+		<string>IONVMeBlockStorageDevice</string>
+		<key>Protocol Characteristics</key>
+		<dict>
+			<key>Physical Interconnect</key>
+			<string>PCI-Express</string>
+			<key>Physical Interconnect Location</key>
+			<string>External</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>Device Characteristics</key>
+		<dict>
+			<key>Medium Type</key>
+			<string>Solid State</string>
+			<key>Product Name</key>
+			<string>APPLE SSD AP16384Z</string>
+			<key>Product Revision Level</key>
+			<string>241.40.4</string>
+			<key>Vendor Name</key>
+			<string></string>
+		</dict>
+		<key>IOObjectClass</key>
+		<string>IOEmbeddedNVMeBlockDevice</string>
+		<key>IORegistryEntryChildren</key>
+		<array>
+			<dict>
+				<key>IOObjectClass</key>
+				<string>IOBlockStorageDriver</string>
+				<key>IORegistryEntryChildren</key>
+				<array>
+					<dict>
+						<key>BSD Name</key>
+						<string>disk0</string>
+						<key>IOObjectClass</key>
+						<string>IOMedia</string>
+						<key>IORegistryEntryName</key>
+						<string>APPLE SSD AP16384Z Media</string>
+						<key>Size</key>
+						<integer>16008889303040</integer>
+						<key>Whole</key>
+						<true/>
+					</dict>
+				</array>
+				<key>IORegistryEntryName</key>
+				<string>IOBlockStorageDriver</string>
+				<key>Statistics</key>
+				<dict>
+					<key>Bytes (Read)</key>
+					<integer>1459163996160</integer>
+					<key>Bytes (Write)</key>
+					<integer>1947597836288</integer>
+					<key>Errors (Read)</key>
+					<integer>0</integer>
+					<key>Errors (Write)</key>
+					<integer>0</integer>
+					<key>Latency Time (Read)</key>
+					<integer>0</integer>
+					<key>Latency Time (Write)</key>
+					<integer>0</integer>
+					<key>Operations (Read)</key>
+					<integer>97637097</integer>
+					<key>Operations (Write)</key>
+					<integer>88411974</integer>
+					<key>Retries (Read)</key>
+					<integer>0</integer>
+					<key>Retries (Write)</key>
+					<integer>0</integer>
+					<key>Total Time (Read)</key>
+					<integer>11652027455579</integer>
+					<key>Total Time (Write)</key>
+					<integer>2836816019140</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>IORegistryEntryName</key>
+		<string>NS_01</string>
+		<key>Protocol Characteristics</key>
+		<dict>
+			<key>Physical Interconnect</key>
+			<string>Apple Fabric</string>
+			<key>Physical Interconnect Location</key>
+			<string>Internal</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>Device Characteristics</key>
+		<dict>
+			<key>Product Name</key>
+			<string> SN770 2TB</string>
+			<key>Product Revision Level</key>
+			<string>1.01</string>
+			<key>Vendor Name</key>
+			<string>WD_BLACK</string>
+		</dict>
+		<key>IOObjectClass</key>
+		<string>IOBlockStorageServices</string>
+		<key>IORegistryEntryChildren</key>
+		<array>
+			<dict>
+				<key>IOObjectClass</key>
+				<string>IOBlockStorageDriver</string>
+				<key>IORegistryEntryChildren</key>
+				<array>
+					<dict>
+						<key>BSD Name</key>
+						<string>disk6</string>
+						<key>IOObjectClass</key>
+						<string>IOMedia</string>
+						<key>IORegistryEntryName</key>
+						<string>WD_BLACK SN770 2TB Media</string>
+						<key>Size</key>
+						<integer>2000398934016</integer>
+						<key>Whole</key>
+						<true/>
+					</dict>
+				</array>
+				<key>IORegistryEntryName</key>
+				<string>IOBlockStorageDriver</string>
+				<key>Statistics</key>
+				<dict>
+					<key>Bytes (Read)</key>
+					<integer>5679646720</integer>
+					<key>Bytes (Write)</key>
+					<integer>24435445760</integer>
+					<key>Errors (Read)</key>
+					<integer>0</integer>
+					<key>Errors (Write)</key>
+					<integer>0</integer>
+					<key>Latency Time (Read)</key>
+					<integer>0</integer>
+					<key>Latency Time (Write)</key>
+					<integer>0</integer>
+					<key>Operations (Read)</key>
+					<integer>557665</integer>
+					<key>Operations (Write)</key>
+					<integer>2142042</integer>
+					<key>Retries (Read)</key>
+					<integer>0</integer>
+					<key>Retries (Write)</key>
+					<integer>0</integer>
+					<key>Total Time (Read)</key>
+					<integer>1911130672888</integer>
+					<key>Total Time (Write)</key>
+					<integer>22515830030265</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>IORegistryEntryName</key>
+		<string>IOBlockStorageServices</string>
+		<key>Protocol Characteristics</key>
+		<dict>
+			<key>Physical Interconnect</key>
+			<string>USB</string>
+			<key>Physical Interconnect Location</key>
+			<string>External</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>Device Characteristics</key>
+		<dict>
+			<key>Medium Type</key>
+			<string>Solid State</string>
+			<key>Product Name</key>
+			<string>Disk Image</string>
+			<key>Product Revision Level</key>
+			<string>598.40.4</string>
+			<key>Vendor Name</key>
+			<string>Apple</string>
+		</dict>
+		<key>IOObjectClass</key>
+		<string>AppleDiskImageDevice</string>
+		<key>IORegistryEntryChildren</key>
+		<array>
+			<dict>
+				<key>IOObjectClass</key>
+				<string>IOBlockStorageDriver</string>
+				<key>IORegistryEntryChildren</key>
+				<array>
+					<dict>
+						<key>BSD Name</key>
+						<string>disk4</string>
+						<key>IOObjectClass</key>
+						<string>IOMedia</string>
+						<key>IORegistryEntryName</key>
+						<string>Apple Disk Image Media</string>
+						<key>Size</key>
+						<integer>18083776000</integer>
+						<key>Whole</key>
+						<true/>
+					</dict>
+				</array>
+				<key>IORegistryEntryName</key>
+				<string>IOBlockStorageDriver</string>
+				<key>Statistics</key>
+				<dict>
+					<key>Bytes (Read)</key>
+					<integer>34822364160</integer>
+					<key>Bytes (Write)</key>
+					<integer>0</integer>
+					<key>Errors (Read)</key>
+					<integer>0</integer>
+					<key>Errors (Write)</key>
+					<integer>0</integer>
+					<key>Latency Time (Read)</key>
+					<integer>0</integer>
+					<key>Latency Time (Write)</key>
+					<integer>0</integer>
+					<key>Operations (Read)</key>
+					<integer>1727665</integer>
+					<key>Operations (Write)</key>
+					<integer>0</integer>
+					<key>Retries (Read)</key>
+					<integer>0</integer>
+					<key>Retries (Write)</key>
+					<integer>0</integer>
+					<key>Total Time (Read)</key>
+					<integer>1040522787856</integer>
+					<key>Total Time (Write)</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>IORegistryEntryName</key>
+		<string>AppleDiskImageDevice</string>
+		<key>Protocol Characteristics</key>
+		<dict>
+			<key>Physical Interconnect</key>
+			<string>Virtual Interface</string>
+			<key>Physical Interconnect Location</key>
+			<string>File</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>Device Characteristics</key>
+		<dict>
+			<key>Product Name</key>
+			<string>Disk Image</string>
+			<key>Product Revision Level</key>
+			<string>710</string>
+			<key>Vendor Name</key>
+			<string>Apple</string>
+		</dict>
+		<key>IOObjectClass</key>
+		<string>IODiskImageBlockStorageDeviceInKernel</string>
+		<key>IORegistryEntryChildren</key>
+		<array>
+			<dict>
+				<key>IOObjectClass</key>
+				<string>IOBlockStorageDriver</string>
+				<key>IORegistryEntryChildren</key>
+				<array>
+					<dict>
+						<key>BSD Name</key>
+						<string>disk10</string>
+						<key>IOObjectClass</key>
+						<string>IOMedia</string>
+						<key>IORegistryEntryName</key>
+						<string>Apple disk image Media</string>
+						<key>Size</key>
+						<integer>2306901504</integer>
+						<key>Whole</key>
+						<true/>
+					</dict>
+				</array>
+				<key>IORegistryEntryName</key>
+				<string>IOBlockStorageDriver</string>
+				<key>Statistics</key>
+				<dict>
+					<key>Bytes (Read)</key>
+					<integer>80890880</integer>
+					<key>Bytes (Write)</key>
+					<integer>0</integer>
+					<key>Errors (Read)</key>
+					<integer>0</integer>
+					<key>Errors (Write)</key>
+					<integer>0</integer>
+					<key>Latency Time (Read)</key>
+					<integer>0</integer>
+					<key>Latency Time (Write)</key>
+					<integer>0</integer>
+					<key>Operations (Read)</key>
+					<integer>1103</integer>
+					<key>Operations (Write)</key>
+					<integer>0</integer>
+					<key>Retries (Read)</key>
+					<integer>0</integer>
+					<key>Retries (Write)</key>
+					<integer>0</integer>
+					<key>Total Time (Read)</key>
+					<integer>1390500181</integer>
+					<key>Total Time (Write)</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>IORegistryEntryName</key>
+		<string>IODiskImageBlockStorageDeviceInKernel</string>
+		<key>Protocol Characteristics</key>
+		<dict>
+			<key>Physical Interconnect</key>
+			<string>Virtual Interface</string>
+		</dict>
+	</dict>
+</array>
+</plist>

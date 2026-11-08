@@ -1,0 +1,79 @@
+{
+ "json_format_version": [
+  1,
+  0
+ ],
+ "smartctl": {
+  "version": [
+   7,
+   5
+  ],
+  "pre_release": false,
+  "svn_revision": "5714",
+  "platform_info": "Darwin 27.2.0 arm64",
+  "build_info": "(local build)",
+  "argv": [
+   "smartctl",
+   "-a",
+   "-j",
+   "disk0"
+  ],
+  "messages": [
+   {
+    "string": "Read 1 entries from Error Information Log failed: GetLogPage failed: system=0x38, sub=0x0, code=745",
+    "severity": "error"
+   }
+  ],
+  "exit_status": 4
+ },
+ "device": {
+  "name": "disk0",
+  "info_name": "disk0",
+  "type": "nvme",
+  "protocol": "NVMe"
+ },
+ "model_name": "APPLE SSD AP16384Z",
+ "firmware_version": "241.40.4",
+ "smart_support": {
+  "available": true,
+  "enabled": true
+ },
+ "smart_status": {
+  "passed": true,
+  "nvme": {
+   "value": 0
+  }
+ },
+ "nvme_smart_health_information_log": {
+  "nsid": -1,
+  "critical_warning": 0,
+  "temperature": 40,
+  "available_spare": 100,
+  "available_spare_threshold": 99,
+  "percentage_used": 0,
+  "data_units_read": 270526202,
+  "data_units_written": 133621457,
+  "host_reads": 7368786152,
+  "host_writes": 2754230835,
+  "controller_busy_time": 0,
+  "power_cycles": 338,
+  "power_on_hours": 1794,
+  "unsafe_shutdowns": 23,
+  "media_errors": 0,
+  "num_err_log_entries": 0
+ },
+ "temperature": {
+  "current": 40
+ },
+ "spare_available": {
+  "current_percent": 100,
+  "threshold_percent": 99
+ },
+ "endurance_used": {
+  "current_percent": 0
+ },
+ "power_cycle_count": 338,
+ "power_on_time": {
+  "hours": 1794
+ }
+}

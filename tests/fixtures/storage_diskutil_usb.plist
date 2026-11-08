@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APFSContainerFree</key>
+	<integer>1736490209280</integer>
+	<key>BusProtocol</key>
+	<string>USB</string>
+	<key>DeviceIdentifier</key>
+	<string>disk7s2</string>
+	<key>DeviceNode</key>
+	<string>/dev/disk7s2</string>
+	<key>Ejectable</key>
+	<true/>
+	<key>FilesystemType</key>
+	<string>apfs</string>
+	<key>Internal</key>
+	<false/>
+	<key>MountPoint</key>
+	<string>/Volumes/Backup Drive</string>
+	<key>ParentWholeDisk</key>
+	<string>disk7</string>
+	<key>RemovableMedia</key>
+	<false/>
+	<key>TotalSize</key>
+	<integer>2000189177856</integer>
+	<key>VolumeName</key>
+	<string>Backup Drive</string>
+	<key>WritableVolume</key>
+	<true/>
+</dict>
+</plist>

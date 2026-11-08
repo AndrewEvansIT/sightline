@@ -1,0 +1,10 @@
+Software Update Tool
+
+Finding available software
+Software Update found the following new or updated software:
+* Label: macOS Example 27.3-26C55
+	Title: macOS Example 27.3, Version: 27.3, Size: 7340032KiB, Recommended: YES, Action: restart, 
+* Label: Command Line Tools for Xcode 27.1-27.1
+	Title: Command Line Tools for Xcode 27.1, Version: 27.1, Size: 921600KiB, Recommended: YES, 
+* Label: Safari27.2-27.2
+	Title: Safari, Version: 27.2, Size: 204800KiB, Recommended: YES, 

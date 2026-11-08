@@ -37,8 +37,13 @@ class App:
     def store(self, wid, data, took=0.0):
         alerts = data.pop("alerts", None) if isinstance(data, dict) else None
         with self.lock:
+            first = not (self.status.get(wid) or {}).get("data")
             self.status[wid] = {"data": data, "at": time.time(), "took": round(took, 2), "error": None, "available": True}
         self.alerts.update(wid, alerts or [])
+        if first:  # widgets that read this one's data shouldn't wait a whole interval for it
+            for other, w in self.widgets.items():
+                if wid in (w.depends_on or []):
+                    self.poke(other)
 
     def store_error(self, wid, error):
         with self.lock:

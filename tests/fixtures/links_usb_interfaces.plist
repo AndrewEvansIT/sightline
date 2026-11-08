@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>LG UltraFine Display Audio</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Audio</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>1</integer>
+		<key>locationID</key>
+		<integer>539234304</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Audio</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>2</integer>
+		<key>locationID</key>
+		<integer>539234304</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Audio</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>2</integer>
+		<key>locationID</key>
+		<integer>539234304</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>HID I2C</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Controls</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>539238400</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>HID BRIGHTNESS</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Controls</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>539238400</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>HID ALS</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Controls</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>539238400</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>2</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>539230208</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>Apple Watch Magnetic Charging Cable</string>
+		<key>USB Vendor Name</key>
+		<string>Apple Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>539033600</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>USBAudio1.0</string>
+		<key>USB Product Name</key>
+		<string>USB Composite Device</string>
+		<key>USB Vendor Name</key>
+		<string>Jieli Technology</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>1</integer>
+		<key>locationID</key>
+		<integer>539164672</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB Composite Device</string>
+		<key>USB Vendor Name</key>
+		<string>Jieli Technology</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>2</integer>
+		<key>locationID</key>
+		<integer>539164672</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB2.1 Hub</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>2</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>538968064</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Camera</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronlcs Inc.</string>
+		<key>USBSpeed</key>
+		<integer>4</integer>
+		<key>bInterfaceClass</key>
+		<integer>14</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>1</integer>
+		<key>locationID</key>
+		<integer>540291072</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Camera</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronlcs Inc.</string>
+		<key>USBSpeed</key>
+		<integer>4</integer>
+		<key>bInterfaceClass</key>
+		<integer>14</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>2</integer>
+		<key>locationID</key>
+		<integer>540291072</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>LG UltraFine Display Camera</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronlcs Inc.</string>
+		<key>USBSpeed</key>
+		<integer>4</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>540291072</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USBSpeed</key>
+		<integer>4</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>540278784</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB3.1 Hub</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>4</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>540016640</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>NCM Control</string>
+		<key>USB Product Name</key>
+		<string>Mac</string>
+		<key>USB Vendor Name</key>
+		<string>Apple Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>2</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>13</integer>
+		<key>locationID</key>
+		<integer>1048576</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>NCM Data</string>
+		<key>USB Product Name</key>
+		<string>Mac</string>
+		<key>USB Vendor Name</key>
+		<string>Apple Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>10</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>1</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>1048576</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>NCM Control</string>
+		<key>USB Product Name</key>
+		<string>Mac</string>
+		<key>USB Vendor Name</key>
+		<string>Apple Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>2</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>13</integer>
+		<key>locationID</key>
+		<integer>1048576</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>NCM Data</string>
+		<key>USB Product Name</key>
+		<string>Mac</string>
+		<key>USB Vendor Name</key>
+		<string>Apple Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>10</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>1</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>1048576</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>TPS DMC WinUSB</string>
+		<key>USB Product Name</key>
+		<string>Element 5 Hub Billboard</string>
+		<key>USB Vendor Name</key>
+		<string>CalDigit, Inc.</string>
+		<key>USBSpeed</key>
+		<integer>2</integer>
+		<key>bInterfaceClass</key>
+		<integer>255</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51707904</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>TPS DMC Billboard</string>
+		<key>USB Product Name</key>
+		<string>Element 5 Hub Billboard</string>
+		<key>USB Vendor Name</key>
+		<string>CalDigit, Inc.</string>
+		<key>USBSpeed</key>
+		<integer>2</integer>
+		<key>bInterfaceClass</key>
+		<integer>17</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51707904</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>LG UltraFine Display Audio</string>
+		<key>USB Product Name</key>
+		<string>USB Audio</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>1</integer>
+		<key>locationID</key>
+		<integer>51527936</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB Audio</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>1</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>2</integer>
+		<key>locationID</key>
+		<integer>51527936</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>HID I2C</string>
+		<key>USB Product Name</key>
+		<string>USB Controls</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51528704</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>HID BRIGHTNESS</string>
+		<key>USB Product Name</key>
+		<string>USB Controls</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51528704</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>HID ALS</string>
+		<key>USB Product Name</key>
+		<string>USB Controls</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>1</integer>
+		<key>bInterfaceClass</key>
+		<integer>3</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51528704</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51527680</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB2.1 Hub</string>
+		<key>USB Vendor Name</key>
+		<string>LG Electronics Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>2</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51511296</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>CDC Communications Control</string>
+		<key>USB Product Name</key>
+		<string>USB 10/100/1G/2.5G LAN</string>
+		<key>USB Vendor Name</key>
+		<string>Realtek</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>2</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>0</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>13</integer>
+		<key>locationID</key>
+		<integer>51576832</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB 10/100/1G/2.5G LAN</string>
+		<key>USB Vendor Name</key>
+		<string>Realtek</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>10</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>1</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51576832</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>UGREEN Storage Device</string>
+		<key>USB Vendor Name</key>
+		<string>UGREEN</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>8</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>80</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>6</integer>
+		<key>locationID</key>
+		<integer>51654656</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB2.0 Hub</string>
+		<key>USB Vendor Name</key>
+		<string>CalDigit, Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>2</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51642368</integer>
+	</dict>
+	<dict>
+		<key>IOObjectClass</key>
+		<string>IOUSBHostInterface</string>
+		<key>IORegistryEntryName</key>
+		<string>IOUSBHostInterface</string>
+		<key>USB Product Name</key>
+		<string>USB2.0 Hub</string>
+		<key>USB Vendor Name</key>
+		<string>CalDigit, Inc.</string>
+		<key>USBSpeed</key>
+		<integer>3</integer>
+		<key>bInterfaceClass</key>
+		<integer>9</integer>
+		<key>bInterfaceProtocol</key>
+		<integer>2</integer>
+		<key>bInterfaceSubClass</key>
+		<integer>0</integer>
+		<key>locationID</key>
+		<integer>51380224</integer>
+	</dict>
+</array>
+</plist>

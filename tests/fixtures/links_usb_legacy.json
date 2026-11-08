@@ -1,0 +1,80 @@
+{
+  "SPUSBDataType" : [
+    {
+      "_items" : [
+        {
+          "_items" : [
+            {
+              "_name" : "Portable SSD T7",
+              "bcd_device" : "1.00",
+              "bus_power" : "900",
+              "bus_power_used" : "896",
+              "device_speed" : "high_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x01110000 / 3",
+              "manufacturer" : "Samsung",
+              "Media" : [
+                {
+                  "_name" : "PSSD T7",
+                  "bsd_name" : "disk4",
+                  "Logical Unit" : 0,
+                  "partition_map_type" : "guid_partition_map_type",
+                  "removable_media" : "no",
+                  "size" : "1 TB",
+                  "size_in_bytes" : 1000204886016,
+                  "smart_status" : "Verified",
+                  "USB Interface" : 0
+                }
+              ],
+              "product_id" : "0x4001",
+              "vendor_id" : "0x04e8  (Samsung Electronics Co., Ltd.)"
+            },
+            {
+              "_name" : "USB Receiver",
+              "bcd_device" : "12.11",
+              "bus_power" : "500",
+              "bus_power_used" : "98",
+              "device_speed" : "full_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x01120000 / 4",
+              "manufacturer" : "Logitech",
+              "product_id" : "0xc52b",
+              "vendor_id" : "0x046d  (Logitech Inc.)"
+            }
+          ],
+          "_name" : "USB2.0 Hub",
+          "bcd_device" : "6.63",
+          "bus_power" : "900",
+          "bus_power_used" : "0",
+          "device_speed" : "high_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x01100000 / 2",
+          "manufacturer" : "GenesysLogic",
+          "product_id" : "0x0610",
+          "vendor_id" : "0x05e3  (Genesys Logic, Inc.)"
+        },
+        {
+          "_name" : "Extreme Pro SSD",
+          "bcd_device" : "10.12",
+          "bus_power" : "900",
+          "bus_power_used" : "896",
+          "device_speed" : "super_speed_plus",
+          "extra_current_used" : "0",
+          "location_id" : "0x01200000 / 5",
+          "manufacturer" : "SanDisk",
+          "Media" : [ { "_name" : "Extreme Pro", "bsd_name" : "disk6", "size_in_bytes" : 2000365289472 } ],
+          "product_id" : "0x55af",
+          "vendor_id" : "0x0781  (SanDisk Corporation)"
+        }
+      ],
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT8103USBXHCI",
+      "location_id" : "0x01000000"
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT8103USBXHCI",
+      "location_id" : "0x00000000"
+    }
+  ]
+}

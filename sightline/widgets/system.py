@@ -47,6 +47,8 @@ class System(Widget):
     description = "Processor and graphics load, chip temperature, fans, power mode and uptime."
     interval = 5
     size = "l"
+    alert_rules = [{"key": "hot", "label": "The chip is running very hot"},
+                   {"key": "throttled", "label": "macOS slows the processor for heat"}]
 
     def __init__(self, app):
         super().__init__(app)

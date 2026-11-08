@@ -1,0 +1,38 @@
+{
+ "object": "list",
+ "data": [
+  {
+   "id": "qwen/qwen3-30b-a3b",
+   "object": "model",
+   "type": "llm",
+   "publisher": "qwen",
+   "arch": "qwen3_moe",
+   "compatibility_type": "mlx",
+   "quantization": "4bit",
+   "state": "loaded",
+   "max_context_length": 40960
+  },
+  {
+   "id": "google/gemma-3-12b",
+   "object": "model",
+   "type": "vlm",
+   "publisher": "google",
+   "arch": "gemma3",
+   "compatibility_type": "gguf",
+   "quantization": "Q4_K_M",
+   "state": "not-loaded",
+   "max_context_length": 131072
+  },
+  {
+   "id": "text-embedding-nomic-embed-text-v1.5",
+   "object": "model",
+   "type": "embeddings",
+   "publisher": "nomic-ai",
+   "arch": "nomic-bert",
+   "compatibility_type": "gguf",
+   "quantization": "Q4_K_M",
+   "state": "not-loaded",
+   "max_context_length": 2048
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+p709
+ftxt
+n/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/Python
+ftxt
+n/usr/lib/dyld

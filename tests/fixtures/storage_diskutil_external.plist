@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APFSContainerFree</key>
+	<integer>1693983141888</integer>
+	<key>BusProtocol</key>
+	<string>PCI-Express</string>
+	<key>DeviceIdentifier</key>
+	<string>disk9s1</string>
+	<key>DeviceNode</key>
+	<string>/dev/disk9s1</string>
+	<key>Ejectable</key>
+	<true/>
+	<key>FilesystemType</key>
+	<string>apfs</string>
+	<key>Internal</key>
+	<false/>
+	<key>MountPoint</key>
+	<string>/Volumes/Models</string>
+	<key>ParentWholeDisk</key>
+	<string>disk9</string>
+	<key>RemovableMedia</key>
+	<false/>
+	<key>SolidState</key>
+	<true/>
+	<key>TotalSize</key>
+	<integer>8001353465856</integer>
+	<key>VolumeName</key>
+	<string>Models</string>
+	<key>WritableVolume</key>
+	<true/>
+</dict>
+</plist>

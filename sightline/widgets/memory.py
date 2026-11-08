@@ -9,6 +9,7 @@ import os
 import re
 import signal
 import subprocess
+import threading
 import time
 
 from .. import core
@@ -29,6 +30,7 @@ ABOUT = {
     "Docker": "Runs containers inside a Linux virtual machine.",
     "Sightline": "This panel.",
 }
+CLI_NAMES = {"claude": "Claude Code", "codex": "Codex", "gemini": "Gemini CLI", "aider": "Aider", "ollama": "Ollama"}
 DEV_TOOLS = {"expo": "Expo", "next": "Next.js", "vite": "Vite", "react-native": "Metro", "webpack": "Webpack",
              "nodemon": "nodemon", "astro": "Astro", "storybook": "Storybook", "nuxt": "Nuxt", "remix": "Remix"}
 SYSTEM_DIRS = ("/System/", "/usr/", "/sbin/", "/bin/", "/Library/Apple/", "/private/", "/Library/Developer/PrivateFrameworks/")
@@ -127,7 +129,10 @@ class Memory(Widget):
     description = "What's using memory, grouped by app, with Quit and Stop. Counts reclaimable memory as available."
     interval = 15
     size = "l"
+    depends_on = ["ai_runtimes"]
     settings = [{"key": "swap_warn_gb", "label": "Warn when swap passes (GB)", "type": "int", "default": 8}]
+    alert_rules = [{"key": "memory-pressure", "label": "Memory is running short"},
+                   {"key": "swap", "label": "A lot of memory has moved to swap"}]
 
     def __init__(self, app):
         super().__init__(app)
@@ -136,10 +141,21 @@ class Memory(Widget):
         self.last_reclaim_scan = 0
 
     def scan_reclaimable(self):
-        """Which of your processes hold reclaimable memory (footprint, ~5 s, no admin rights). Every 2 minutes."""
-        if time.time() - self.last_reclaim_scan < 120:
+        """Start the reclaimable-memory scan in the background every 2 minutes (it takes 5–20 s)."""
+        if time.time() - self.last_reclaim_scan < 120 or getattr(self, "scanning", False):
             return
         self.last_reclaim_scan = time.time()
+        self.scanning = True
+        threading.Thread(target=self._scan_reclaimable, daemon=True, name="memory:reclaimable").start()
+
+    def _scan_reclaimable(self):
+        """Which of your processes hold reclaimable memory (footprint, no admin rights)."""
+        try:
+            self.reclaim_by_pid = self._read_reclaimable()
+        finally:
+            self.scanning = False
+
+    def _read_reclaimable(self):
         me, found = str(os.getuid()), {}
         pids = [p[0] for p in (l.split() for l in core.run(["ps", "-axo", "pid=,uid="]).splitlines()) if len(p) == 2 and p[1] == me]
         out = core.home("footprint.json")
@@ -154,7 +170,7 @@ class Memory(Widget):
                 continue
             for p in procs:
                 found[str(p["pid"])] = sum(c.get("reclaimable", 0) for c in p.get("categories", {}).values())
-        self.reclaim_by_pid = found
+        return found
 
     def model_pids(self):
         """pid -> label for local-model processes, as the AI runtimes widget found them."""
@@ -250,8 +266,9 @@ class Memory(Widget):
             elif kind != "agent" and app_of(ppid):
                 (bundle, name), kind = app_of(ppid), "app"
             else:
-                name = base
-                kind = kind if kind == "agent" else "process"
+                name = CLI_NAMES.get(base, base)
+                # Coding agents: no Stop here (it would end every session at once); quit them in their terminal.
+                kind = kind if kind == "agent" else ("cli" if base in CLI_NAMES and base != "ollama" else "process")
             g = groups.setdefault(name, {"name": name, "kind": kind, "bytes": 0, "procs": [], "pids": [], "bases": {}})
             g["bytes"] += size
             g["pids"].append(pid)
@@ -342,4 +359,6 @@ class Memory(Widget):
                     except OSError:
                         pass
             return {"ok": True, "message": f"Asked {name} to stop."}
+        if kind == "cli":
+            return {"ok": False, "message": f"End {name} sessions in their own terminal windows."}
         return {"ok": False, "message": "macOS manages this one." if kind == "macos" else "Quit it from its own window."}

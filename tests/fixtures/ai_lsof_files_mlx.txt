@@ -1,0 +1,9 @@
+p40569
+fcwd
+n/Users/me/experiments
+ftxt
+n/Users/me/tools/omlx-venv/lib/python3.12/site-packages/mlx/core.cpython-312-darwin.so
+ftxt
+n/Users/me/tools/omlx-venv/lib/python3.12/site-packages/mlx/lib/libmlx.dylib
+ftxt
+n/System/Library/Extensions/AGXMetalG15X_M2.bundle/Contents/Resources/ds.binary.metallib.g15d-b0

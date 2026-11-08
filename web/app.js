@@ -97,11 +97,12 @@
     return (list || []).map((r) => {
       if (r.sep) return `<div class="sep">${h(r.sep)}</div>`;
       const label = r.sub ? `<span class="stack"><span class="lbl">${h(r.label)}</span><span class="sub">${h(r.sub)}</span></span>` : `<span class="lbl">${h(r.label)}</span>`;
-      return `<div class="row"${r.title ? ` title="${h(r.title)}"` : ""}>${r.state ? dot(r.state) : ""}${label}<span class="val">${h(r.value == null ? "" : r.value)}</span>${actionButtons(r.actions)}</div>`;
+      const indent = r.depth ? ` style="padding-left:${Math.min(6, r.depth) * 14}px"` : "";
+      return `<div class="row"${indent}${r.title ? ` title="${h(r.title)}"` : ""}>${r.state ? dot(r.state) : ""}${label}<span class="val">${h(r.value == null ? "" : r.value)}</span>${actionButtons(r.actions)}</div>`;
     }).join("");
   }
   function meters(list) {
-    return (list || []).map((m) => `<div class="meter"><div class="line"><span>${h(m.label)}</span><span>${h(m.text || (m.pct != null ? Math.round(m.pct) + "%" : ""))}</span></div>
+    return (list || []).map((m) => `<div class="meter"><div class="line"><span>${h(m.label)}</span><span>${h(m.text || (m.pct != null ? Math.round(m.pct) + "%" : ""))}${m.actions ? " " + actionButtons(m.actions) : ""}</span></div>
       <div class="track"><i class="${h(m.state || stateOf(m.pct))}" style="width:${Math.max(0, Math.min(100, m.pct || 0))}%"></i></div></div>`).join("");
   }
   function bigs(list) {
@@ -221,12 +222,12 @@
     if (ctx.readonly()) return toast("This view is read-only.");
     if (b.hasAttribute("data-confirm") && !b.classList.contains("armed")) {
       b.classList.add("armed");
-      b.dataset.label = b.textContent;
+      b._label = b.innerHTML;
       b.textContent = "Sure?";
-      setTimeout(() => { if (b.classList.contains("armed")) { b.classList.remove("armed"); b.textContent = b.dataset.label; } }, 4000);
+      setTimeout(() => { if (b.classList.contains("armed")) { b.classList.remove("armed"); b.innerHTML = b._label; } }, 4000);
       return;
     }
-    b.classList.remove("armed");
+    if (b.classList.contains("armed")) { b.classList.remove("armed"); b.innerHTML = b._label; }
     b.disabled = true;
     let params = {};
     try { params = JSON.parse(b.dataset.params || "{}"); } catch (e) { /* none */ }
@@ -265,12 +266,14 @@
 
   async function loadRenderers() {
     const res = await api("/api/renderers");
-    await Promise.all(res.renderers.map((name) => new Promise((ok) => {
+    const load = (name, retry) => new Promise((ok) => {
       const s = document.createElement("script");
-      s.src = `/static/widgets/${name}.js`;
-      s.onload = s.onerror = ok;
+      s.src = `/static/widgets/${name}.js${retry ? "?r=1" : ""}`;
+      s.onload = ok;
+      s.onerror = () => { s.remove(); retry ? ok() : setTimeout(() => load(name, true).then(ok), 500); };
       document.head.appendChild(s);
-    })));
+    });
+    await Promise.all(res.renderers.map((name) => load(name, false)));
   }
 
   window.Sightline = {
@@ -297,5 +300,10 @@
     if (config && !config.setup_done && !TOKEN && window.SightlineSettings) window.SightlineSettings.setup();
   }
   window.addEventListener("resize", applyLook);
-  document.addEventListener("DOMContentLoaded", start);
+  document.addEventListener("DOMContentLoaded", () => {
+    // Tell the Mac app when Settings or a card is open, so a strip or column can float above other windows.
+    const ov = document.getElementById("overlay");
+    if (bridge) new MutationObserver(() => bridge.postMessage({ overlay: !ov.hidden })).observe(ov, { attributes: true, attributeFilter: ["hidden"] });
+    start();
+  });
 })();

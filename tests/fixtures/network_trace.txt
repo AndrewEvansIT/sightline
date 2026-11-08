@@ -1,0 +1,16 @@
+fl=123f456
+h=1.1.1.1
+ip=203.0.113.7
+ts=1762600000.123
+visit_scheme=https
+uag=Python-urllib/3.9
+colo=SEA
+sliver=none
+http=http/1.1
+loc=US
+tls=TLSv1.3
+sni=off
+warp=off
+gateway=off
+rbi=off
+kex=X25519

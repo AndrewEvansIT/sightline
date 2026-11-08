@@ -1,0 +1,3 @@
+p905
+ftxt
+n/Users/me/.venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.dylib

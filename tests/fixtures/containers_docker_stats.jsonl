@@ -1,0 +1,2 @@
+{"BlockIO":"1MB / 2MB","CPUPerc":"1.25%","Container":"a1b2c3d4e5f6","ID":"a1b2c3d4e5f6","MemPerc":"0.40%","MemUsage":"91.5MiB / 7.654GiB","Name":"shop-db-1","NetIO":"1kB / 2kB","PIDs":"9"}
+{"BlockIO":"0B / 0B","CPUPerc":"0.10%","Container":"0f9e8d7c6b5a","ID":"0f9e8d7c6b5a","MemPerc":"0.05%","MemUsage":"4.2MiB / 7.654GiB","Name":"shop-cache-1","NetIO":"1kB / 2kB","PIDs":"5"}

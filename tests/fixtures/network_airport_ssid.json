@@ -1,0 +1,65 @@
+{
+  "SPAirPortDataType": [
+    {
+      "spairport_airport_interfaces": [
+        {
+          "_name": "en1",
+          "spairport_airport_other_local_wireless_networks": [
+            {
+              "_name": "<redacted>",
+              "spairport_network_channel": "157 (5GHz, 80MHz)",
+              "spairport_network_phymode": "802.11a/n/ac/ax",
+              "spairport_network_type": "spairport_network_type_station",
+              "spairport_security_mode": "pairport_security_mode_wpa3_transition"
+            },
+            {
+              "_name": "<redacted>",
+              "spairport_network_channel": "100 (5GHz, 160MHz)",
+              "spairport_network_phymode": "802.11a/n/ac/ax",
+              "spairport_network_type": "spairport_network_type_station",
+              "spairport_security_mode": "pairport_security_mode_wpa3_transition"
+            }
+          ],
+          "spairport_caps_airdrop": "spairport_caps_supported",
+          "spairport_caps_autounlock": "spairport_caps_supported",
+          "spairport_caps_wow": "spairport_caps_supported",
+          "spairport_current_network_information": {
+            "_name": "ExampleNet",
+            "spairport_network_channel": "36 (5GHz, 80MHz)",
+            "spairport_network_country_code": "US",
+            "spairport_network_mcs": 10,
+            "spairport_network_phymode": "802.11ac",
+            "spairport_network_rate": 866,
+            "spairport_network_type": "spairport_network_type_station",
+            "spairport_security_mode": "spairport_security_mode_wpa3_personal",
+            "spairport_signal_noise": "-72 dBm / -95 dBm"
+          },
+          "spairport_status_information": "spairport_status_connected",
+          "spairport_supported_channels": [
+            "1 (2GHz)",
+            "2 (2GHz)",
+            "3 (2GHz)",
+            "4 (2GHz)"
+          ],
+          "spairport_supported_phymodes": "802.11 a/b/g/n/ac/ax",
+          "spairport_wireless_card_type": "spairport_wireless_card_type_wifi (0x14E4, 0x4388)",
+          "spairport_wireless_country_code": "US",
+          "spairport_wireless_firmware_version": "wl0: example firmware",
+          "spairport_wireless_locale": "FCC",
+          "spairport_wireless_mac_address": "02:00:11:22:33:0c"
+        },
+        {
+          "_name": "awdl0",
+          "spairport_current_network_information": {
+            "spairport_network_type": "spairport_network_type_station"
+          },
+          "spairport_supported_channels": [
+            "1 (2GHz)",
+            "2 (2GHz)"
+          ],
+          "spairport_wireless_mac_address": "02:00:11:22:33:0d"
+        }
+      ]
+    }
+  ]
+}

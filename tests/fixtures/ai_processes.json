@@ -1,0 +1,158 @@
+{
+ "procs": {
+  "1": [
+   "0",
+   "0",
+   "/sbin/launchd"
+  ],
+  "700": [
+   "1",
+   "501",
+   "/System/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal"
+  ],
+  "701": [
+   "700",
+   "0",
+   "/usr/bin/login"
+  ],
+  "702": [
+   "701",
+   "501",
+   "-zsh"
+  ],
+  "703": [
+   "702",
+   "501",
+   "claude"
+  ],
+  "704": [
+   "703",
+   "501",
+   "/bin/zsh"
+  ],
+  "705": [
+   "704",
+   "501",
+   "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python"
+  ],
+  "706": [
+   "705",
+   "501",
+   "/usr/bin/timeout"
+  ],
+  "707": [
+   "706",
+   "501",
+   "caffeinate"
+  ],
+  "708": [
+   "706",
+   "501",
+   "omlx-server"
+  ],
+  "709": [
+   "704",
+   "501",
+   "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python"
+  ],
+  "800": [
+   "1",
+   "501",
+   "/Applications/FluidVoice.app/Contents/MacOS/FluidVoice"
+  ],
+  "801": [
+   "800",
+   "501",
+   "/Applications/FluidVoice.app/Contents/Helpers/fluid-intelligence-mlx"
+  ],
+  "900": [
+   "1",
+   "501",
+   "/Applications/Visual Studio Code.app/Contents/MacOS/Electron"
+  ],
+  "901": [
+   "900",
+   "501",
+   "/bin/zsh"
+  ],
+  "902": [
+   "901",
+   "501",
+   "/Users/me/.venv/bin/python3"
+  ],
+  "903": [
+   "901",
+   "501",
+   "/opt/homebrew/bin/llama-server"
+  ],
+  "904": [
+   "901",
+   "501",
+   "/Users/me/.venv/bin/python3"
+  ],
+  "905": [
+   "901",
+   "501",
+   "/Users/me/.venv/bin/python3"
+  ],
+  "1000": [
+   "1",
+   "501",
+   "/Applications/Ollama.app/Contents/MacOS/Ollama"
+  ],
+  "1001": [
+   "1000",
+   "501",
+   "/Applications/Ollama.app/Contents/Resources/ollama"
+  ],
+  "1002": [
+   "1001",
+   "501",
+   "/Applications/Ollama.app/Contents/Resources/ollama"
+  ],
+  "1100": [
+   "1",
+   "0",
+   "/usr/local/bin/llama-server"
+  ],
+  "1003": [
+   "1001",
+   "501",
+   "/Applications/Ollama.app/Contents/Resources/ollama"
+  ]
+ },
+ "args": {
+  "703": "claude",
+  "705": "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u bin/night.py run big-model --phases probe",
+  "706": "/usr/bin/timeout -s KILL 18600 /Users/me/tools/omlx-venv/bin/omlx serve --model-dir /tmp/models --port 8301 --headless",
+  "707": "caffeinate -i /usr/bin/timeout -s KILL 18600 /Users/me/tools/omlx-venv/bin/omlx serve --model-dir /tmp/models --port 8301",
+  "708": "omlx-server",
+  "709": "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -I /tmp/agent.py chat 8301 mlx-community--DeepSeek-V4.1-Flash-oQ4e",
+  "801": "/Applications/FluidVoice.app/Contents/Helpers/fluid-intelligence-mlx serve-json --backend fluiddecode",
+  "902": "/Users/me/.venv/bin/python3 -m mlx_lm.server --model mlx-community/Qwen3-32B-4bit --port 8080",
+  "903": "/opt/homebrew/bin/llama-server -m /Users/me/models/gemma-3-27b-it-Q4_K_M.gguf --port 8081 -ngl 99",
+  "904": "/Users/me/.venv/bin/python3 /Users/me/.venv/bin/hf download mlx-community/Qwen3-235B-A22B-4bit",
+  "905": "/Users/me/.venv/bin/python3 make_pictures.py --steps 4",
+  "1001": "/Applications/Ollama.app/Contents/Resources/ollama serve",
+  "1002": "/Applications/Ollama.app/Contents/Resources/ollama runner --model /Users/me/.ollama/models/blobs/sha256-abc --ctx-size 8192 --port 54123",
+  "1100": "/usr/local/bin/llama-server -m /srv/models/phi-4-Q8_0.gguf --port 9000",
+  "1003": "/Applications/Ollama.app/Contents/Resources/ollama runner --model /Users/me/.ollama/models/blobs/sha256-def --ctx-size 4096 --port 54124"
+ },
+ "fp": {
+  "703": 429496729.6,
+  "705": 53687091.2,
+  "706": 1073741.824,
+  "707": 1073741.824,
+  "708": 312458870784,
+  "709": 64424509.44,
+  "801": 2254857830.4,
+  "902": 19864223744.0,
+  "903": 18468359372.8,
+  "904": 644245094.4,
+  "905": 9663676416.0,
+  "1001": 53687091.2,
+  "1002": 27165668147.2,
+  "1100": 9663676416,
+  "1003": 4402341478.4
+ }
+}

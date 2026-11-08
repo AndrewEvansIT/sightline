@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APFSContainerFree</key>
+	<integer>466067456</integer>
+	<key>BusProtocol</key>
+	<string>Disk Image</string>
+	<key>DeviceIdentifier</key>
+	<string>disk5s1</string>
+	<key>DeviceNode</key>
+	<string>/dev/disk5s1</string>
+	<key>Ejectable</key>
+	<true/>
+	<key>FilesystemType</key>
+	<string>apfs</string>
+	<key>Internal</key>
+	<false/>
+	<key>MountPoint</key>
+	<string>/Library/Developer/CoreSimulator/Volumes/iOS_23F77</string>
+	<key>ParentWholeDisk</key>
+	<string>disk5</string>
+	<key>RemovableMedia</key>
+	<true/>
+	<key>SolidState</key>
+	<true/>
+	<key>TotalSize</key>
+	<integer>18083741696</integer>
+	<key>VolumeName</key>
+	<string>iOS 26.5 Simulator</string>
+	<key>WritableVolume</key>
+	<false/>
+</dict>
+</plist>

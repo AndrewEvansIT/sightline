@@ -44,7 +44,9 @@ body {
   font: var(--font)/1.4 -apple-system, "SF Pro Text", system-ui, sans-serif;
   font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased;
   display: flex; flex-direction: column; overflow: hidden; cursor: default;
+  -webkit-user-select: none; user-select: none;
 }
+input, textarea, .codeline, .selectable { -webkit-user-select: text; user-select: text; }
 button { font: inherit; color: inherit; }
 [hidden] { display: none !important; }
 
@@ -68,6 +70,7 @@ button { font: inherit; color: inherit; }
 /* window: a responsive grid */
 [data-layout="window"] .board { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); grid-auto-flow: dense;
                                 align-content: start; overflow-y: auto; }
+[data-layout="window"] .card { min-height: auto; max-height: 460px; }
 [data-layout="window"] .card.size-l { grid-column: span 2; }
 [data-layout="window"] .card.size-xl { grid-column: span 3; }
 @media (max-width: 700px) { [data-layout="window"] .card.size-l, [data-layout="window"] .card.size-xl { grid-column: auto; } }
@@ -79,6 +82,7 @@ button { font: inherit; color: inherit; }
 [data-layout="strip"] .card.size-xl { width: 620px; height: 100%; }
 /* column: one tall column at the side of a screen */
 [data-layout="column"] .board { display: flex; flex-direction: column; overflow-y: auto; }
+[data-layout="column"] .card { flex: none; max-height: 520px; }
 
 /* Cards ---------------------------------------------------------------------- */
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--pad);

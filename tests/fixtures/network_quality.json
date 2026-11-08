@@ -1,0 +1,87 @@
+{
+  "base_rtt": 24.6212158203125,
+  "cli_options": [
+    "-c"
+  ],
+  "dl_bytes_transferred": 274659379,
+  "dl_flows": 9,
+  "dl_phase_duration": 8.576880097389221,
+  "dl_phase_end": "2026-11-08 04:02:23.776",
+  "dl_phase_start": "2026-11-08 04:02:15.199",
+  "dl_throughput": 280161216,
+  "draft_version": 8,
+  "end_date": "2026-11-08 04:02:23.780",
+  "il_h2_req_resp": [
+    14.699101448059082,
+    24.23405647277832,
+    22.51207733154297,
+    19.757986068725586
+  ],
+  "il_tcp_handshake_443": [
+    12,
+    15,
+    16,
+    13
+  ],
+  "il_tls_handshake": [
+    26,
+    32,
+    33,
+    44
+  ],
+  "interface_name": "en14",
+  "lud_foreign_h2_req_resp": [
+    23,
+    108,
+    110,
+    123
+  ],
+  "lud_foreign_tcp_handshake_443": [
+    17,
+    17,
+    14,
+    9
+  ],
+  "lud_foreign_tls_handshake": [
+    65,
+    102,
+    110,
+    132
+  ],
+  "lud_self_h2_req_resp": [
+    133,
+    93,
+    51,
+    86
+  ],
+  "os_version": "Version 27.2 (Build 26B123)",
+  "other": {
+    "ecn_values": {
+      "ecn_disabled": 185
+    },
+    "interface-type": {
+      "wired": 185
+    },
+    "l4s_enablement": {
+      "disabled": 185
+    },
+    "protocols_seen": {
+      "h2": 185
+    },
+    "proxy_state": {
+      "not_proxied": 185
+    },
+    "rat": {
+      "unknown": 185
+    }
+  },
+  "responsiveness": 589.587890625,
+  "start_date": "2026-11-08 04:02:15.014",
+  "test_endpoint": "usxxx1-edge-fx-001.aaplimg.com",
+  "ul_bytes_transferred": 39190530,
+  "ul_flows": 8,
+  "ul_phase_duration": 8.576880097389221,
+  "ul_phase_end": "2026-11-08 04:02:23.776",
+  "ul_phase_start": "2026-11-08 04:02:15.199",
+  "ul_throughput": 42224004
+}

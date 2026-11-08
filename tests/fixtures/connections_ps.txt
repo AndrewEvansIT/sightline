@@ -1,0 +1,34 @@
+20153 95944   501 /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/FitnessIntelligenceDaemonCore.framework/fitnessintelligenced
+23546 23539   501 /Applications/Docker.app/Contents/MacOS/com.docker.backend
+34775 34774   501 /Users/me/Library/Application Support/Claude/claude-code/2.1.317/91184d3d9ba3/claude.app/Contents/MacOS/claude
+67217 67216   501 /Users/me/Library/Application Support/Claude/claude-code/2.1.317/91184d3d9ba3/claude.app/Contents/MacOS/claude
+71448     1   501 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter
+71463     1   501 /System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app/Contents/MacOS/identityservicesd
+72056     1   501 /usr/libexec/sharingd
+73339 73338   501 /Users/me/Library/Application Support/Claude/claude-code/2.1.317/91184d3d9ba3/claude.app/Contents/MacOS/claude
+74052     1   501 /usr/libexec/rapportd
+75314     1   501 /System/Library/PrivateFrameworks/ReplicatorCore.framework/Support/replicatord
+76956 76955   501 /Users/me/Library/Application Support/Claude/claude-code/2.1.317/91184d3d9ba3/claude.app/Contents/MacOS/claude
+80031 78536   501 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper
+80039 79945   501 /Applications/Slack.app/Contents/Frameworks/Slack Helper.app/Contents/MacOS/Slack Helper
+80057 79912   501 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.80/Helpers/Google Chrome Helper (Aperitif).app/Contents/MacOS/Google Chrome Helper (Aperitif)
+80066     1   501 /System/Library/PrivateFrameworks/HomeKitDaemon.framework/Support/homed
+81432     1   501 /System/Library/CoreServices/UniversalControl.app/Contents/MacOS/UniversalControl
+86644 79949   501 /Applications/Linear.app/Contents/Frameworks/Linear Helper.app/Contents/MacOS/Linear Helper
+92850 79949   501 /Applications/Linear.app/Contents/Frameworks/Linear Helper.app/Contents/MacOS/Linear Helper
+97332 95944   501 /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/configd_sim
+97375 95944   501 /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/ApplePushService.framework/apsd
+97448 95944   501 /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/iTunesCloud.framework/Support/itunescloudd
+97490 95944   501 /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/amsengagementd
+97610     1   501 /Users/me/Developer/panel/build/Example Panel.app/Contents/MacOS/Example Panel
+    1     0     0 /sbin/launchd
+23539     1   501 /Applications/Docker.app/Contents/MacOS/com.docker.backend
+34774 78536   501 /Applications/Claude.app/Contents/Helpers/disclaimer
+67216 78536   501 /Applications/Claude.app/Contents/Helpers/disclaimer
+73338 78536   501 /Applications/Claude.app/Contents/Helpers/disclaimer
+76955 78536   501 /Applications/Claude.app/Contents/Helpers/disclaimer
+78536     1   501 /Applications/Claude.app/Contents/MacOS/Claude
+79912     1   501 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+79945     1   501 /Applications/Slack.app/Contents/MacOS/Slack
+79949     1   501 /Applications/Linear.app/Contents/MacOS/Linear
+95944     1   501 launchd_sim

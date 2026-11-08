@@ -1,0 +1,8 @@
+======================================================================
+fluid-intelligence-mlx [50609]: 64-bit    Footprint: 2110 MB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+1790 MB        0 B          0 B        836    IOAccelerator (graphics)
+ 295 MB        0 B          0 B       7071    Malloc Small

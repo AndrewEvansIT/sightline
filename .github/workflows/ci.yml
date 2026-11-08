@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests (stdlib only, no installs)
+        run: python -m unittest discover -s tests -v
+
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build helpers and the app
+        run: app/build.sh --zip
+      - name: The bundled server starts and answers
+        run: |
+          cd app/build/Sightline.app/Contents/Resources
+          SIGHTLINE_HOME=$(mktemp -d) /usr/bin/python3 -m sightline --port 47899 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:47899/api/status > /dev/null && break; sleep 1; done
+          curl -sf http://127.0.0.1:47899/api/widgets | python3 -c "import json,sys; w=json.load(sys.stdin)['widgets']; print(len(w), 'widgets'); assert len(w) >= 10"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Sightline
+          path: dist/Sightline.zip

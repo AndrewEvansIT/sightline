@@ -1,0 +1,7 @@
+data: {"id": "c1", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "The"}, "finish_reason": null}]}
+
+data: {"id": "c1", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": " caretaker"}, "finish_reason": null}]}
+
+data: {"id": "c1", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": " walked"}, "finish_reason": null}]}
+
+data: [DONE]

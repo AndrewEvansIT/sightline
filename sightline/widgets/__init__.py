@@ -37,7 +37,10 @@ class Widget:
     delay = 0               # seconds to wait before the first collect
     size = "m"              # s | m | l | xl: how much room the card wants
     default_on = True
+    recheck = 300           # seconds between available() checks (also while available, so a card can go away)
+    depends_on = []         # widget ids whose data this one reads; it collects again when they first report
     settings = []           # [{"key", "label", "type": bool|int|text|choice|list, "default", "choices", "help"}]
+    alert_rules = []        # [{"key": "disk-full", "label": "A disk is almost full"}]; alert keys are "<rule>:<detail>"
 
     def __init__(self, app):
         self.app = app
@@ -49,7 +52,7 @@ class Widget:
         return True
 
     def collect(self):
-        """Return the widget's data (a dict). Runs in the widget's own thread."""
+        """Return the widget's data (a dict), or None to hide the card for now. Runs in the widget's own thread."""
         return {}
 
     def actions(self):
@@ -82,7 +85,7 @@ class Widget:
 
     def meta(self):
         return {"id": self.id, "title": self.title, "category": self.category, "description": self.description,
-                "size": self.size, "default_on": self.default_on, "settings": self.settings,
+                "size": self.size, "default_on": self.default_on, "settings": self.settings, "alert_rules": self.alert_rules,
                 "actions": sorted(self.actions().keys())}
 
 
@@ -125,7 +128,7 @@ class Runner:
         while True:
             wait = self.widget.interval
             if self.app.enabled(self.widget.id):
-                if self.is_available is None or (not self.is_available and time.time() - self.checked > 300):
+                if self.is_available is None or time.time() - self.checked > self.widget.recheck:
                     self.checked = time.time()
                     try:
                         self.is_available = bool(self.widget.available())
@@ -134,13 +137,16 @@ class Runner:
                 if self.is_available:
                     started = time.time()
                     try:
-                        data = self.widget.collect() or {}
-                        self.app.store(self.widget.id, data, took=time.time() - started)
+                        data = self.widget.collect()
+                        if data is None:
+                            self.app.store_unavailable(self.widget.id)
+                        else:
+                            self.app.store(self.widget.id, data, took=time.time() - started)
                     except Exception as e:
                         traceback.print_exc()
                         self.app.store_error(self.widget.id, f"{type(e).__name__}: {e}")
                 else:
                     self.app.store_unavailable(self.widget.id)
-                    wait = 300
+                    wait = min(self.widget.recheck, 300)
             self.wake.wait(wait)
             self.wake.clear()

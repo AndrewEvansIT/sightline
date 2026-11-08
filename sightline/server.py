@@ -223,6 +223,7 @@ def lan_set(app, enabled):
 OPEN_TARGETS = {
     "firewall": ["open", "x-apple.systempreferences:com.apple.Network-Settings.extension?Firewall"],
     "privacy": ["open", "x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension"],
+    "local-network": ["open", "x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension?Privacy_LocalNetwork"],
     "login-items": ["open", "x-apple.systempreferences:com.apple.LoginItems-Settings.extension"],
     "updates": ["open", "x-apple.systempreferences:com.apple.Software-Update-Settings.extension"],
     "time-machine": ["open", "x-apple.systempreferences:com.apple.Time-Machine-Settings.extension"],

@@ -1,0 +1,75 @@
+{
+ "SPBluetoothDataType": [
+  {
+   "controller_properties": {
+    "controller_chipset": "BCM_4388C2",
+    "controller_state": "attrib_on",
+    "controller_transport": "PCIe"
+   },
+   "device_connected": [
+    {
+     "Magic Keyboard": {
+      "device_address": "AA:BB:CC:00:00:02",
+      "device_batteryLevelMain": "100%",
+      "device_minorType": "Keyboard",
+      "device_productID": "0x029F",
+      "device_vendorID": "0x004C"
+     }
+    },
+    {
+     "Magic Mouse": {
+      "device_address": "AA:BB:CC:00:00:01",
+      "device_minorType": "Mouse",
+      "device_productID": "0x0269",
+      "device_vendorID": "0x004C"
+     }
+    },
+    {
+     "Gaming Mouse": {
+      "device_address": "AA:BB:CC:00:00:03",
+      "device_minorType": "Mouse",
+      "device_vendorID": "0x046D"
+     }
+    },
+    {
+     "AirPods Pro": {
+      "device_address": "AA:BB:CC:00:00:04",
+      "device_batteryLevelCase": "40%",
+      "device_batteryLevelLeft": "85%",
+      "device_batteryLevelRight": "80%",
+      "device_caseVersion": "9A348",
+      "device_firmwareVersion": "9A348",
+      "device_minorType": "Headphones",
+      "device_productID": "0x2027",
+      "device_vendorID": "0x004C"
+     }
+    },
+    {
+     "Magic Trackpad": {
+      "device_address": "AA:BB:CC:00:00:05",
+      "device_batteryLevelMain": "55%",
+      "device_minorType": "Magic Trackpad",
+      "device_productID": "0x0265",
+      "device_vendorID": "0x004C"
+     }
+    },
+    {
+     "iPhone": {
+      "device_address": "AA:BB:CC:00:00:06",
+      "device_batteryLevelMain": "70%",
+      "device_minorType": "Phone"
+     }
+    }
+   ],
+   "device_not_connected": [
+    {
+     "Beats Studio": {
+      "device_address": "AA:BB:CC:00:00:07",
+      "device_minorType": "Headphones",
+      "device_batteryLevelMain": "20%"
+     }
+    }
+   ]
+  }
+ ]
+}

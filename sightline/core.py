@@ -107,6 +107,29 @@ def human_bytes(n):
     return f"{n:.1f} TB"
 
 
+_cache = {}
+_cache_lock = threading.Lock()
+
+
+def cached(seconds):
+    """Share one result for a few seconds between widgets that ask at the same time (ps, top)."""
+    def wrap(fn):
+        def inner():
+            with _cache_lock:
+                hit = _cache.get(fn.__name__)
+                if hit and time.time() - hit[0] < seconds:
+                    return dict(hit[1])
+            value = fn()
+            with _cache_lock:
+                _cache[fn.__name__] = (time.time(), value)
+            return dict(value)
+        inner.__name__ = fn.__name__
+        inner.__doc__ = fn.__doc__
+        return inner
+    return wrap
+
+
+@cached(3)
 def footprints():
     """pid -> memory in bytes as Activity Monitor counts it (top's MEM column; rss misses model weights)."""
     import re
@@ -116,6 +139,7 @@ def footprints():
             for m in re.finditer(r"^\s*(\d+)\s+([\d.]+)([BKMG])[+-]?\s*$", out, re.M)}
 
 
+@cached(2)
 def processes():
     """pid -> (ppid, uid, command path) for every process. comm is last, so it isn't cut short."""
     procs = {}
@@ -126,6 +150,7 @@ def processes():
     return procs
 
 
+@cached(2)
 def process_args():
     """pid -> full command line."""
     out = {}

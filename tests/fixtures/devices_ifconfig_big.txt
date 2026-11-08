@@ -1,0 +1,4 @@
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 00:11:22:33:44:10
+	inet 172.16.4.20 netmask 0xfffff000 broadcast 172.16.15.255
+	status: active

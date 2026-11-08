@@ -1,0 +1,279 @@
+{
+ "SPUSBHostDataType": [
+  {
+   "_name": "USB 3.1 Bus",
+   "Driver": "AppleT8122USBXHCI",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x04000000"
+  },
+  {
+   "_name": "USB 3.1 Bus",
+   "Driver": "AppleT8122USBXHCI",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x05000000"
+  },
+  {
+   "_name": "USB 3.1 Bus",
+   "Driver": "AppleT8122USBXHCI",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x02000000"
+  },
+  {
+   "_items": [
+    {
+     "_name": "Mac",
+     "USBDeviceKeyLinkSpeed": "480 Mb/s",
+     "USBDeviceKeyProductID": "0x1905",
+     "USBDeviceKeyProductVersion": "0x1716",
+     "USBDeviceKeyVendorID": "0x05ac",
+     "USBDeviceKeyVendorName": "Apple Inc.",
+     "USBKeyHardwareType": "Removable",
+     "USBKeyLocationID": "0x00100000"
+    }
+   ],
+   "_name": "USB 3.1 Bus",
+   "Driver": "AppleT8122USBXHCI",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x00000000"
+  },
+  {
+   "_items": [
+    {
+     "_items": [
+      {
+       "_name": "Element 5 Hub Billboard",
+       "USBDeviceKeyLinkSpeed": "1.5 Mb/s",
+       "USBDeviceKeyProductID": "0xace1",
+       "USBDeviceKeyProductVersion": "0x0150",
+       "USBDeviceKeyVendorID": "0x2188",
+       "USBDeviceKeyVendorName": "CalDigit, Inc.",
+       "USBKeyHardwareType": "Non-removable",
+       "USBKeyLocationID": "0x03150000"
+      },
+      {
+       "_name": "TPS DMC Family",
+       "USBDeviceKeyLinkSpeed": "1.5 Mb/s",
+       "USBDeviceKeyProductID": "0xace1",
+       "USBDeviceKeyProductVersion": "0x0150",
+       "USBDeviceKeyVendorID": "0x0451",
+       "USBDeviceKeyVendorName": "Texas Instruments Inc",
+       "USBKeyHardwareType": "Removable",
+       "USBKeyLocationID": "0x03110000"
+      },
+      {
+       "_items": [
+        {
+         "_name": "UGREEN Storage Device",
+         "USBDeviceKeyLinkSpeed": "480 Mb/s",
+         "USBDeviceKeyProductID": "0x9220",
+         "USBDeviceKeyProductVersion": "0x230b",
+         "USBDeviceKeyVendorID": "0x0bda",
+         "USBDeviceKeyVendorName": "UGREEN",
+         "USBKeyHardwareType": "Removable",
+         "USBKeyLocationID": "0x03143000"
+        }
+       ],
+       "_name": "USB2.0 Hub",
+       "USBDeviceKeyLinkSpeed": "480 Mb/s",
+       "USBDeviceKeyProductID": "0x3591",
+       "USBDeviceKeyProductVersion": "0x6321",
+       "USBDeviceKeyVendorID": "0x2188",
+       "USBDeviceKeyVendorName": "CalDigit, Inc.",
+       "USBKeyHardwareType": "Removable",
+       "USBKeyLocationID": "0x03140000"
+      },
+      {
+       "_items": [
+        {
+         "_items": [
+          {
+           "_name": "USB Audio",
+           "USBDeviceKeyLinkSpeed": "480 Mb/s",
+           "USBDeviceKeyProductID": "0x9a42",
+           "USBDeviceKeyProductVersion": "0x0028",
+           "USBDeviceKeyVendorID": "0x043e",
+           "USBDeviceKeyVendorName": "LG Electronics Inc.",
+           "USBKeyHardwareType": "Non-removable",
+           "USBKeyLocationID": "0x03124100"
+          },
+          {
+           "_name": "USB Controls",
+           "USBDeviceKeyLinkSpeed": "12 Mb/s",
+           "USBDeviceKeyProductID": "0x9a40",
+           "USBDeviceKeyProductVersion": "0x0214",
+           "USBDeviceKeyVendorID": "0x043e",
+           "USBDeviceKeyVendorName": "LG Electronics Inc.",
+           "USBKeyHardwareType": "Non-removable",
+           "USBKeyLocationID": "0x03124400"
+          }
+         ],
+         "_name": "Unnamed Device",
+         "USBDeviceKeyLinkSpeed": "480 Mb/s",
+         "USBDeviceKeyProductID": "0x9a48",
+         "USBDeviceKeyProductVersion": "0x8832",
+         "USBDeviceKeyVendorID": "0x043e",
+         "USBKeyHardwareType": "Non-removable",
+         "USBKeyLocationID": "0x03124000"
+        }
+       ],
+       "_name": "USB2.1 Hub",
+       "USBDeviceKeyLinkSpeed": "480 Mb/s",
+       "USBDeviceKeyProductID": "0x9a46",
+       "USBDeviceKeyProductVersion": "0x5226",
+       "USBDeviceKeyVendorID": "0x043e",
+       "USBDeviceKeyVendorName": "LG Electronics Inc.",
+       "USBKeyHardwareType": "Removable",
+       "USBKeyLocationID": "0x03120000"
+      },
+      {
+       "_name": "USB 10/100/1G/2.5G LAN",
+       "USBDeviceKeyLinkSpeed": "480 Mb/s",
+       "USBDeviceKeyPowerAllocation": "1 W (200 mA)",
+       "USBDeviceKeyProductID": "0x8156",
+       "USBDeviceKeyProductVersion": "0x31f0",
+       "USBDeviceKeyVendorID": "0x0bda",
+       "USBDeviceKeyVendorName": "Realtek",
+       "USBKeyHardwareType": "Removable",
+       "USBKeyLocationID": "0x03130000"
+      }
+     ],
+     "_name": "USB2.0 Hub",
+     "USBDeviceKeyLinkSpeed": "480 Mb/s",
+     "USBDeviceKeyProductID": "0x5805",
+     "USBDeviceKeyProductVersion": "0x0101",
+     "USBDeviceKeyVendorID": "0x2188",
+     "USBDeviceKeyVendorName": "CalDigit, Inc.",
+     "USBKeyHardwareType": "Removable",
+     "USBKeyLocationID": "0x03100000"
+    }
+   ],
+   "_name": "USB 3.1 Bus",
+   "Driver": "AppleT8122USBXHCI",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x03000000"
+  },
+  {
+   "_name": "USB 3.1 Bus",
+   "Driver": "AppleT8122USBXHCI",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x01000000"
+  },
+  {
+   "_items": [
+    {
+     "_items": [
+      {
+       "_items": [
+        {
+         "_name": "LG UltraFine Display Camera",
+         "USBDeviceKeyLinkSpeed": "5 Gb/s",
+         "USBDeviceKeyProductID": "0x9a68",
+         "USBDeviceKeyProductVersion": "0x0223",
+         "USBDeviceKeyVendorID": "0x043e",
+         "USBDeviceKeyVendorName": "LG Electronlcs Inc.",
+         "USBKeyHardwareType": "Non-removable",
+         "USBKeyLocationID": "0x20343000"
+        }
+       ],
+       "_name": "Unnamed Device",
+       "USBDeviceKeyLinkSpeed": "5 Gb/s",
+       "USBDeviceKeyProductID": "0x9a71",
+       "USBDeviceKeyProductVersion": "0x0100",
+       "USBDeviceKeyVendorID": "0x043e",
+       "USBKeyHardwareType": "Non-removable",
+       "USBKeyLocationID": "0x20340000"
+      }
+     ],
+     "_name": "USB3.1 Hub",
+     "USBDeviceKeyLinkSpeed": "5 Gb/s",
+     "USBDeviceKeyProductID": "0x9a60",
+     "USBDeviceKeyProductVersion": "0x5250",
+     "USBDeviceKeyVendorID": "0x043e",
+     "USBDeviceKeyVendorName": "LG Electronics Inc.",
+     "USBKeyHardwareType": "Removable",
+     "USBKeyLocationID": "0x20300000"
+    },
+    {
+     "_items": [
+      {
+       "_items": [
+        {
+         "_name": "LG UltraFine Display Audio",
+         "USBDeviceKeyLinkSpeed": "480 Mb/s",
+         "USBDeviceKeyProductID": "0x9a66",
+         "USBDeviceKeyProductVersion": "0x0003",
+         "USBDeviceKeyVendorID": "0x043e",
+         "USBDeviceKeyVendorName": "LG Electronics Inc.",
+         "USBKeyHardwareType": "Non-removable",
+         "USBKeyLocationID": "0x20241000"
+        },
+        {
+         "_name": "LG UltraFine Display Controls",
+         "USBDeviceKeyLinkSpeed": "12 Mb/s",
+         "USBDeviceKeyProductID": "0x9a70",
+         "USBDeviceKeyProductVersion": "0x0413",
+         "USBDeviceKeyVendorID": "0x043e",
+         "USBDeviceKeyVendorName": "LG Electronics Inc.",
+         "USBKeyHardwareType": "Non-removable",
+         "USBKeyLocationID": "0x20242000"
+        }
+       ],
+       "_name": "Unnamed Device",
+       "USBDeviceKeyLinkSpeed": "480 Mb/s",
+       "USBDeviceKeyProductID": "0x9a73",
+       "USBDeviceKeyProductVersion": "0x0100",
+       "USBDeviceKeyVendorID": "0x043e",
+       "USBKeyHardwareType": "Non-removable",
+       "USBKeyLocationID": "0x20240000"
+      },
+      {
+       "_name": "Apple Watch Magnetic Charging Cable",
+       "USBDeviceKeyLinkSpeed": "12 Mb/s",
+       "USBDeviceKeyPowerAllocation": "2.5 W (500 mA)",
+       "USBDeviceKeyProductID": "0x0503",
+       "USBDeviceKeyProductVersion": "0x2130",
+       "USBDeviceKeyVendorID": "0x05ac",
+       "USBDeviceKeyVendorName": "Apple Inc.",
+       "USBKeyHardwareType": "Removable",
+       "USBKeyLocationID": "0x20210000"
+      },
+      {
+       "_name": "USB Composite Device",
+       "USBDeviceKeyLinkSpeed": "12 Mb/s",
+       "USBDeviceKeyProductID": "0x4155",
+       "USBDeviceKeyProductVersion": "0x0100",
+       "USBDeviceKeyVendorID": "0x3634",
+       "USBDeviceKeyVendorName": "Jieli Technology",
+       "USBKeyHardwareType": "Removable",
+       "USBKeyLocationID": "0x20230000"
+      }
+     ],
+     "_name": "USB2.1 Hub",
+     "USBDeviceKeyLinkSpeed": "480 Mb/s",
+     "USBDeviceKeyProductID": "0x9a61",
+     "USBDeviceKeyProductVersion": "0x5250",
+     "USBDeviceKeyVendorID": "0x043e",
+     "USBDeviceKeyVendorName": "LG Electronics Inc.",
+     "USBKeyHardwareType": "Removable",
+     "USBKeyLocationID": "0x20200000"
+    }
+   ],
+   "_name": "USB 3.0 Bus",
+   "Driver": "AppleUSBXHCITR",
+   "USBControllerKeyPCIDeviceID": "0x15f0",
+   "USBControllerKeyPCIRevisionID": "0x0006",
+   "USBControllerKeyPCIVendorID": "0x8086",
+   "USBKeyHardwareType": "Thunderbolt",
+   "USBKeyLocationID": "0x20000000"
+  },
+  {
+   "_name": "USB 3.0 Bus",
+   "Driver": "AppleEmbeddedUSBXHCIASMedia3142",
+   "USBControllerKeyPCIDeviceID": "0x2142",
+   "USBControllerKeyPCIRevisionID": "0x0000",
+   "USBControllerKeyPCIVendorID": "0x1b21",
+   "USBKeyHardwareType": "Built-in",
+   "USBKeyLocationID": "0x08000000"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+	inet 127.0.0.1 netmask 0xff000000
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 00:11:22:33:44:10
+	status: inactive
+en14: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 00:11:22:33:44:03
+	inet 192.168.1.23 netmask 0xffffff00 broadcast 192.168.1.255
+	status: active
+en1: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 02:00:11:22:33:0c
+	inet 192.168.1.239 netmask 0xffffff00 broadcast 192.168.1.255
+	status: active

@@ -10,7 +10,7 @@ from . import core
 DEFAULTS = {
     "version": 1,
     "port": 47800,
-    "layout": "strip",          # strip (bottom of a screen) | column (side of a screen) | window
+    "layout": "window",         # strip (bottom of a screen) | column (side of a screen) | window
     "screen": "auto",           # auto = the portrait screen if there is one, else the main screen
     "strip_height": 520,
     "column_width": 440,

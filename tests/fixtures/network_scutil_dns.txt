@@ -1,0 +1,34 @@
+DNS configuration
+
+resolver #1
+  nameserver[0] : 2001:db8:53::1
+  nameserver[1] : 192.168.1.1
+  nameserver[2] : 1.1.1.1
+  nameserver[3] : 203.0.113.53
+  if_index : 14 (en14)
+  flags    : Request A records, Request AAAA records
+  reach    : 0x00000002 (Reachable)
+
+resolver #2
+  domain   : local
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records, Request AAAA records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300000
+
+resolver #3
+  domain   : 254.169.in-addr.arpa
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records, Request AAAA records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300200
+
+DNS configuration (for scoped queries)
+
+resolver #1
+  nameserver[0] : 8.8.8.8
+  if_index : 14 (en14)
+  flags    : Scoped, Request A records, Request AAAA records
+  reach    : 0x00000002 (Reachable)

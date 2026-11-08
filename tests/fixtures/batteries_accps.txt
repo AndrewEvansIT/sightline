@@ -1,0 +1,4 @@
+Now drawing from 'AC Power'
+ -Magic Mouse (id=95944704)	12%; discharging present: true
+ -Magic Keyboard (id=95944705)	100%; charging present: true
+ -Gaming Mouse (id=95944706)	64%; discharging present: true

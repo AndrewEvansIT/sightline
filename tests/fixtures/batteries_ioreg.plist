@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Accessory Category</key>
+		<string>Mouse</string>
+		<key>BatteryPercent</key>
+		<integer>12</integer>
+		<key>BatteryStatusFlags</key>
+		<integer>0</integer>
+		<key>BluetoothDevice</key>
+		<true/>
+		<key>Built-In</key>
+		<false/>
+		<key>DeviceAddress</key>
+		<string>aa-bb-cc-00-00-01</string>
+		<key>HasBattery</key>
+		<true/>
+		<key>IOClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IOObjectClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IORegistryEntryName</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>Product</key>
+		<string>Magic Mouse</string>
+		<key>ProductID</key>
+		<integer>617</integer>
+		<key>Transport</key>
+		<string>Bluetooth</string>
+		<key>VendorID</key>
+		<integer>76</integer>
+	</dict>
+	<dict>
+		<key>Accessory Category</key>
+		<string>Keyboard</string>
+		<key>BatteryPercent</key>
+		<integer>100</integer>
+		<key>BatteryStatusFlags</key>
+		<integer>0</integer>
+		<key>BluetoothDevice</key>
+		<true/>
+		<key>Built-In</key>
+		<false/>
+		<key>DeviceAddress</key>
+		<string>aa-bb-cc-00-00-02</string>
+		<key>HasBattery</key>
+		<true/>
+		<key>IOClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IOObjectClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IORegistryEntryName</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>Product</key>
+		<string>Magic Keyboard</string>
+		<key>ProductID</key>
+		<integer>671</integer>
+		<key>Transport</key>
+		<string>Bluetooth</string>
+		<key>VendorID</key>
+		<integer>76</integer>
+	</dict>
+	<dict>
+		<key>Accessory Category</key>
+		<string>Mouse</string>
+		<key>BatteryPercent</key>
+		<integer>64</integer>
+		<key>BatteryStatusFlags</key>
+		<integer>0</integer>
+		<key>BluetoothDevice</key>
+		<true/>
+		<key>Built-In</key>
+		<false/>
+		<key>DeviceAddress</key>
+		<string>aa-bb-cc-00-00-03</string>
+		<key>HasBattery</key>
+		<true/>
+		<key>IOClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IOObjectClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IORegistryEntryName</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>Manufacturer</key>
+		<string></string>
+		<key>Product</key>
+		<string></string>
+		<key>ProductID</key>
+		<integer>617</integer>
+		<key>Transport</key>
+		<string>Bluetooth</string>
+		<key>VendorID</key>
+		<integer>1133</integer>
+	</dict>
+	<dict>
+		<key>Accessory Category</key>
+		<string>Keyboard</string>
+		<key>BatteryPercent</key>
+		<integer>100</integer>
+		<key>BatteryStatusFlags</key>
+		<integer>0</integer>
+		<key>BluetoothDevice</key>
+		<true/>
+		<key>Built-In</key>
+		<false/>
+		<key>DeviceAddress</key>
+		<string>aa-bb-cc-00-00-02</string>
+		<key>HasBattery</key>
+		<true/>
+		<key>IOClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IOObjectClass</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>IORegistryEntryName</key>
+		<string>AppleDeviceManagementHIDEventService</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>Product</key>
+		<string>Magic Keyboard</string>
+		<key>ProductID</key>
+		<integer>671</integer>
+		<key>Transport</key>
+		<string>Bluetooth</string>
+		<key>VendorID</key>
+		<integer>76</integer>
+	</dict>
+</array>
+</plist>

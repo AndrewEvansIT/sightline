@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AutoBackup</key>
+	<integer>1</integer>
+	<key>AutoBackupInterval</key>
+	<integer>3600</integer>
+	<key>Destinations</key>
+	<array>
+		<dict>
+			<key>AttemptDates</key>
+			<array>
+				<date>2026-11-08T11:39:00Z</date>
+			</array>
+			<key>BytesAvailable</key>
+			<integer>1735762112512</integer>
+			<key>BytesUsed</key>
+			<integer>264127070208</integer>
+			<key>DestinationID</key>
+			<string>00000000-0000-0000-0000-000000000001</string>
+			<key>FilesystemTypeName</key>
+			<string>apfs</string>
+			<key>LastKnownVolumeName</key>
+			<string>Backup Drive</string>
+			<key>RESULT</key>
+			<integer>0</integer>
+			<key>SnapshotDates</key>
+			<array>
+				<date>2026-11-07T22:10:05Z</date>
+				<date>2026-11-08T10:40:37Z</date>
+				<date>2026-11-08T11:43:51Z</date>
+			</array>
+		</dict>
+	</array>
+	<key>RequiresACPower</key>
+	<false/>
+</dict>
+</plist>
